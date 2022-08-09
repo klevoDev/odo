@@ -1,0 +1,25 @@
+// * ===== fonts ===== * //
+@import "_fonts";
+
+// * ===== null ===== * //
+@import "_variables";
+@import "_nullstyle";
+
+body {
+    font-family: $fontOpenSans;
+    background: #1d2024;
+}
+
+// * ===== bem blocks ===== * //
+@import "_blocks";
+
+// * ===== header ===== * //
+@import "_header";
+
+// * ===== main ===== * //
+@import "_page";
+
+// * ===== all sections ===== * //
+@import "_odo";
+
+// * ===== footer ===== * //
