@@ -97,6 +97,9 @@ body {
   padding: 8px 16px;
   border-radius: 12px;
   background-color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
 }
 
 .header {
@@ -201,10 +204,6 @@ body {
   padding: 24px 24px 40px 24px;
 }
 
-.cards__head:nth-child(2) {
-  background: linear-gradient(113.19deg, #09af2d -3.48%, #4efff4 73.02%, #0bd3ff 91.29%);
-}
-
 .cards__title {
   font-weight: 800;
   font-size: 32px;
@@ -213,6 +212,7 @@ body {
   -webkit-font-feature-settings: "pnum" on, "lnum" on;
           font-feature-settings: "pnum" on, "lnum" on;
   color: #fff;
+  margin-bottom: 8px;
 }
 
 .cards__user-skills {
@@ -231,7 +231,7 @@ body {
   padding: 6px 16px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 100px;
-  margin: 8px;
+  margin-left: 8px;
 }
 
 .cards__skill:nth-child(1) {
@@ -250,13 +250,9 @@ body {
 }
 
 .cards__data-list {
-  font-family: "Open Sans";
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 111%;
-  -webkit-font-feature-settings: "pnum" on, "lnum" on;
-          font-feature-settings: "pnum" on, "lnum" on;
   color: rgba(20, 23, 27, 0.96);
   margin-bottom: 16px;
 }
@@ -266,10 +262,9 @@ body {
 }
 
 .cards__data:last-child {
+  font-weight: 400;
   font-size: 14px;
   line-height: 143%;
-  -webkit-font-feature-settings: "pnum" on, "lnum" on;
-          font-feature-settings: "pnum" on, "lnum" on;
   color: rgba(20, 23, 27, 0.55);
   margin-bottom: 0;
 }
@@ -284,8 +279,6 @@ body {
   font-weight: 600;
   font-size: 14px;
   line-height: 143%;
-  -webkit-font-feature-settings: "pnum" on, "lnum" on;
-          font-feature-settings: "pnum" on, "lnum" on;
 }
 
 .cards__apply {
