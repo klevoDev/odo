@@ -21,15 +21,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-bug:before {
+._icon-back-arrow:before {
   content: "\e900";
 }
-._icon-layers:before {
+
+._icon-telegram:before {
   content: "\e901";
-}
-// ._icon-cube:before {
-//   content: "\e902";
-// }
-._icon-cube::after {
-  content: "\e902";
 }

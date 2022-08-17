@@ -1,5 +1,6 @@
 // * ===== fonts ===== * //
 @import "_fonts";
+@import "_iconfont";
 
 // * ===== null ===== * //
 @import "_variables";
@@ -7,7 +8,7 @@
 
 body {
     font-family: $fontOpenSans;
-    background: #1d2024;
+    background: #e1e8f4;
 }
 
 // * ===== bem blocks ===== * //
@@ -20,7 +21,7 @@ body {
 @import "_page";
 
 // * ===== all sections ===== * //
-@import "_odo";
-@import "_cards";
+@import "_blog";
 
 // * ===== footer ===== * //
+@import "_footer";

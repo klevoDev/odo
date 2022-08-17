@@ -1,8 +1,7 @@
 .page {
-    &__odo {
-        margin-bottom: 48px;
-    }
-
-    &__cards {
+    &__blog {
+        &:last-child() {
+            margin-bottom: 74px;
+        }
     }
 }

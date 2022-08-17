@@ -1,5 +1,5 @@
 .header {
-    margin-bottom: 48px;
+    margin-bottom: 63px;
 
     &__row {
         display: flex;
@@ -10,11 +10,10 @@
 
     &__logo {
         font-weight: 800;
-        font-size: 24px;
-        line-height: 67%;
-        letter-spacing: 0.02em;
+        font-size: 32px;
+        line-height: 125%;
 
-        color: $colorWhite;
+        color: rgba(21, 31, 45, 0.96);
     }
 
     &__nav {
@@ -23,10 +22,11 @@
     &__nav-list {
         display: flex;
         margin-left: 56px;
+        margin-top: 7px;
 
         font-weight: 600;
         font-size: 16px;
-        line-height: 125%;
+        line-height: 150%;
     }
 
     &__item {
@@ -34,16 +34,25 @@
     }
 
     &__link {
-        color: $colorGrey;
+        color: #6e85ab;
         transition: all 0.3s ease 0s;
 
         &:hover {
-            color: $colorWhite;
+            color: rgba(21, 31, 45, 0.96);
         }
     }
 
-    &__wrap-subscribe {
+    &__subscribe-list {
+        display: flex;
         margin-left: auto;
+        margin-top: 10px;
+    }
+
+    &__item {
+        margin-left: 24px;
+    }
+
+    &__telegram {
     }
 
     &__subscribe {
