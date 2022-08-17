@@ -75,7 +75,7 @@
 @media (max-width: 768px) {
     .blog {
         &__wrap-blog {
-            width: 500px;
+            max-width: 400px;
         }
 
         &__row {
@@ -85,6 +85,34 @@
 
         &__body {
             padding: 0;
+        }
+
+        &__wrap-image {
+            flex: 0 0 300px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .blog {
+        &__wrap-blog {
+            width: 350px;
+            padding: 32px 16px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .blog {
+        &__wrap-blog {
+            width: 300px;
+            padding: 20px 5px;
+            text-align: center;
+        }
+
+        &__wrap-image {
+            flex: 0 0 280px;
         }
     }
 }
