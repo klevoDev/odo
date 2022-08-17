@@ -71,3 +71,16 @@
         border-radius: 16px;
     }
 }
+
+@media (max-width: 768px) {
+    .blog {
+        &__wrap-blog {
+            width: 500px;
+        }
+
+        &__row {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}

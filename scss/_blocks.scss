@@ -9,6 +9,14 @@
     box-sizing: content-box;
 }
 
+.logo {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 125%;
+
+    color: rgba(21, 31, 45, 0.96);
+}
+
 .subscribe {
     color: $colorBlack;
     padding: 14px 20px;

@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="header__row">
                     <div class="header__wrap-logo">
-                        <a class="header__logo" href="./index.html">
+                        <a class="header__logo logo" href="./index.html">
                             ODO
                         </a>
                     </div>
@@ -113,10 +113,12 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer__row">
-                    <div class="footer__logo">
-                        ODO
-                    </div>
                     <ul class="footer__list">
+                        <li class="footer__item">
+                            <a class="footer__logo logo" href="#">
+                                ODO
+                            </a>
+                        </li>
                         <li class="footer__item">
                             <a class="footer__ref" href="#">
                                 События
@@ -133,23 +135,25 @@
                             </a>
                         </li>
                     </ul>
-                    <form class="footer__form" action="#">
-                        <ul class="footer__subscribe-list">
-                            <li class="footer__sub-item">
-                                <a class="footer__telegram telegram _icon-telegram" href="https://t.me/onedayoffer" target="_blank">
-                                    Телеграм канал
-                                </a>
-                            </li>
-                            <li class="footer__wrap-input">
-                                <input class="footer__input" type="text" placeholder="E-mail" name="usermail">
-                            </li>
-                            <li class="footer__sub-item">
-                                <a class="footer__subscribe subscribe" href="#">
-                                    Подписаться на события
-                                </a>
-                            </li>
-                        </ul>
-                    </form>
+                    <div class="footer__wrap-sub">
+                        <div class="footer__wrap-telegram">
+                            <a class="footer__telegram telegram _icon-telegram" href="https://t.me/onedayoffer" target="_blank">
+                                Телеграм канал
+                            </a>
+                        </div>
+                        <form class="footer__form" action="#">
+                            <div class="footer__wrap-input">
+                                <input class="footer__input" type="text" placeholder="E-mail" name="email">
+                            </div>
+
+                        </form>
+                        <div class="footer__wrap-subscribe">
+                            <a class="footer__subscribe subscribe" href="#">
+                                Подписаться на события
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </footer>
