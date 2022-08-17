@@ -53,3 +53,39 @@
     &__subscribe {
     }
 }
+
+@media (max-width: 768px) {
+    .header {
+        &__row {
+        }
+
+        &__wrap-logo {
+        }
+
+        &__logo {
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__nav-list {
+        }
+
+        &__item {
+        }
+
+        &__link {
+        }
+
+        &__subscribe-list {
+        }
+
+        &__telegram {
+            display: none;
+        }
+
+        &__subscribe {
+        }
+    }
+}

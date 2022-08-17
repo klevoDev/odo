@@ -82,5 +82,9 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
+        &__body {
+            padding: 0;
+        }
     }
 }

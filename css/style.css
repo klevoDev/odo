@@ -131,7 +131,7 @@ body {
 }
 
 .subscribe {
-  color: rgba(20, 23, 27, 0.96);
+  color: #000;
   padding: 14px 20px;
   border-radius: 16px;
   background-color: #fff;
@@ -223,6 +223,15 @@ body {
   margin-left: 24px;
 }
 
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+  .header__telegram {
+    display: none;
+  }
+}
+
 .blog__wrap-blog {
   margin: 0 auto;
   padding: 32px;
@@ -307,6 +316,9 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .blog__body {
+    padding: 0;
+  }
 }
 
 .footer {
@@ -378,7 +390,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 143%;
-  color: rgba(20, 23, 27, 0.96);
+  color: #000;
   outline: none;
 }
 
