@@ -185,6 +185,12 @@ body {
   color: rgba(21, 31, 45, 0.96);
 }
 
+.text {
+  font-size: 14px;
+  line-height: 143%;
+  color: rgba(21, 31, 45, 0.96);
+}
+
 .header {
   margin-bottom: 63px;
 }
@@ -391,6 +397,77 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 280px;
             flex: 0 0 280px;
+  }
+}
+
+.page__note {
+  margin-bottom: 0;
+}
+
+.note__body {
+  margin: 0 auto;
+  padding: 32px 48px;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 24px;
+}
+
+.note__subheading {
+  margin-bottom: 16px;
+}
+
+.note__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(21, 31, 45, 0.96);
+  margin-bottom: 16px;
+}
+
+.note__topic {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #38b5cf;
+  margin-bottom: 32px;
+}
+
+.note__wrap-img {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.note__img {
+  border-radius: 16px;
+  max-width: 100%;
+}
+
+.note__text {
+  margin-bottom: 32px;
+}
+
+.note__wrap-pic {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.note__pic {
+  border-radius: 16px;
+  max-width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .note__body {
+    padding: 16px 24px;
+  }
+  .note__subheading {
+    text-align: center;
+  }
+  .note__title {
+    text-align: center;
+  }
+  .note__topic {
+    text-align: center;
   }
 }
 
