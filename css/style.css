@@ -132,6 +132,14 @@ body {
           box-sizing: content-box;
 }
 
+.case {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
 .logo {
   font-weight: 800;
   font-size: 32px;
@@ -402,6 +410,32 @@ body {
 
 .page__note {
   margin-bottom: 0;
+}
+
+.note__wrap-back {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  margin-bottom: 16px;
+}
+
+.note__back {
+  color: #6e85ab;
+  padding-left: 20px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.note__back::before {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  font-size: 13px;
+}
+
+.note__back:hover {
+  color: rgba(21, 31, 45, 0.96);
 }
 
 .note__body {

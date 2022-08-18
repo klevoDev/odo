@@ -4,6 +4,33 @@
     }
 }
 .note {
+    &__wrap-back {
+        position: relative;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+
+        margin-bottom: 16px;
+    }
+
+    &__back {
+        color: #6e85ab;
+        padding-left: 20px;
+        transition: all 0.3s ease 0s;
+
+        &::before {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            font-size: 13px;
+        }
+
+        &:hover {
+            color: $colorGarkBlue;
+        }
+    }
+
     &__body {
         margin: 0 auto;
         padding: 32px 48px;
@@ -12,6 +39,9 @@
 
         background: #ffffff;
         border-radius: 24px;
+
+        &::before {
+        }
     }
 
     &__subheading {
