@@ -5,48 +5,158 @@
 .tickets {
     &__row {
         display: flex;
+        margin: -16px -16px;
+        flex-wrap: wrap;
     }
 
     &__column {
+        padding: 16px;
+        flex: 0 1 33.3334%;
+    }
+
+    &__item {
+        padding: 32px;
+        background: #fff;
+        border-radius: 32px;
+        transition: all 0.3s ease 0s;
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
+        }
     }
 
     &__title {
+        margin-bottom: 16px;
     }
 
     &__stack {
+        display: flex;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+
+        color: #38b5cf;
+
+        margin-bottom: 24px;
     }
 
     &__point {
+        padding: 5px 13.5px;
+        border: 1px solid #38b5cf;
+        border-radius: 87.7854px;
+        margin-left: 4px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
     }
 
     &__data-list {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: rgba(21, 31, 45, 0.96);
+
+        margin-bottom: 24px;
     }
 
     &__data-point {
+        margin-bottom: 4px;
+
+        &:last-child {
+            font-size: 14px;
+            line-height: 143%;
+
+            color: #6e85ab;
+            margin-bottom: 0;
+        }
     }
 
     &__company-info {
+        position: relative;
+
+        display: flex;
     }
 
     &__wrap-logo {
     }
 
     &__logo {
+        border-radius: 50%;
     }
 
     &__about-company {
+        padding-top: 13px;
+        margin-left: 16px;
     }
 
     &__span-company {
+        font-size: 14px;
+        line-height: 143%;
+
+        color: #6e85ab;
     }
 
     &__wrap-button {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
     }
 
     &__button {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: 0;
+
+        padding: 10px 16px;
+        color: rgba(21, 31, 45, 0.96);
+        border: 1px solid rgba(21, 31, 45, 0.96);
+        border-radius: 16px;
     }
-}
-.container {
-}
-.title {
+
+    &__item-shadow {
+        padding: 32px 0 0 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 24px;
+
+        &:hover {
+            box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
+        }
+    }
+
+    &__title-shadow {
+        text-align: center;
+        margin: 0 auto;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 125%;
+        width: 281px;
+
+        text-align: center;
+
+        color: rgba(110, 133, 171, 0.5);
+
+        margin-bottom: 24px;
+    }
+
+    &__wrap-img-load {
+        text-align: center;
+    }
+
+    &__wrap-load {
+    }
+
+    &__wrap-cartoon {
+        text-align: right;
+    }
+
+    &__cartoon {
+    }
 }
