@@ -18,12 +18,12 @@ body {
 @import "_header";
 
 // * ===== main ===== * //
-@import "_page";
 
 // * ===== all sections ===== * //
 @import "_start";
 @import "_blog";
 @import "_note";
+@import "_tickets";
 
 // * ===== footer ===== * //
 @import "_footer";
