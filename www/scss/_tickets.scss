@@ -1,11 +1,13 @@
 .page {
     &__tickets {
+        margin-bottom: 48px;
     }
 }
+
 .tickets {
     &__row {
         display: flex;
-        margin: -16px -16px;
+        margin: 0 -16px;
         flex-wrap: wrap;
     }
 
