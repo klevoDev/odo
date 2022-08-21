@@ -1,0 +1,169 @@
+.page {
+    &__details {
+    }
+}
+.details {
+    &__wrap-back {
+    }
+
+    &__back {
+    }
+
+    &__wrap {
+        padding: 48px;
+        max-width: 1312px;
+
+        background: #fff;
+        border-radius: 48px;
+    }
+
+    &__wrap-headig {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__subheading {
+        font-weight: 800;
+        font-size: 70px;
+        line-height: 129%;
+        letter-spacing: 0.02em;
+
+        color: rgba(21, 31, 45, 0.96);
+
+        margin-bottom: 17px;
+    }
+
+    &__company-info {
+        display: flex;
+    }
+
+    &__wrap-logo {
+    }
+
+    &__logo {
+        border-radius: 50%;
+    }
+
+    &__about-company {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 125%;
+
+        color: rgba(21, 31, 45, 0.96);
+        margin-left: 16px;
+    }
+
+    &__span-company {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+
+        color: #6e85ab;
+    }
+
+    &__stack-list {
+        display: flex;
+
+        margin-bottom: 24px;
+    }
+
+    &__point {
+        font-weight: 400;
+        font-size: 14.0457px;
+        line-height: 125%;
+
+        color: #38b5cf;
+
+        padding: 8px 15px;
+        border: 1px solid #38b5cf;
+        border-radius: 100px;
+        margin-left: 8px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+
+    &__stage-list {
+        display: flex;
+
+        margin-bottom: 8px;
+    }
+
+    &__stage-one {
+        width: 70px;
+        height: 70px;
+        background: #c2edf7;
+        border-radius: 100px;
+    }
+
+    &__number {
+        display: inline-block;
+        padding-left: 25px;
+        padding-top: 15px;
+
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 125%;
+
+        color: rgba(21, 31, 45, 0.96);
+    }
+
+    &__line {
+        margin: 30px 16px 0 16px;
+        width: 208.33px;
+        height: 0px;
+
+        border: 2px solid #c2edf7;
+    }
+
+    &__stage-info-list {
+        display: flex;
+
+        margin-bottom: 40px;
+    }
+
+    &__info-one {
+    }
+
+    &__info-two {
+        margin-left: 165px;
+    }
+
+    &__info-three {
+        margin-left: 100px;
+    }
+
+    &__info-four {
+        margin-left: 200px;
+    }
+
+    &__span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: #6e85ab;
+    }
+
+    &__topic {
+    }
+
+    &__text {
+    }
+
+    &__wrap-button {
+        margin-top: 48px;
+    }
+
+    &__button {
+        font-size: 16px;
+        line-height: 150%;
+
+        color: rgba(21, 31, 45, 0.96);
+
+        padding: 14px 20px;
+        border: 1px solid rgba(21, 31, 45, 0.96);
+        border-radius: 20px;
+    }
+}

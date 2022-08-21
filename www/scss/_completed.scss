@@ -6,6 +6,7 @@
     &__row-data {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         margin-bottom: 24px;
     }
@@ -26,7 +27,16 @@
     }
 
     &__left {
-        color: $colorGarkBlue;
+        position: relative;
+        color: #6e85ab;
+        margin-right: 16px;
+
+        &::before {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            font-size: 16px;
+        }
     }
 
     &__wrap-month {
@@ -34,7 +44,7 @@
         font-size: 16px;
         line-height: 125%;
 
-        margin-left: 32px;
+        margin: 0 16px 0 16px;
     }
 
     &__month {
@@ -50,14 +60,24 @@
     }
 
     &__rigth {
+        position: relative;
+        color: #6e85ab;
+        margin-left: 16px;
+
+        &::after {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            font-size: 16px;
+        }
     }
 
     &__year {
         font-weight: 600;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 143%;
 
-        color: $colorGarkBlue;
+        color: #6e85ab;
 
         margin-left: 32px;
     }
