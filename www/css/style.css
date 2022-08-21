@@ -850,6 +850,7 @@ body {
   max-width: 1312px;
   background: #fff;
   border-radius: 48px;
+  margin-bottom: 48px;
 }
 .details__wrap-headig {
   display: flex;
@@ -953,6 +954,13 @@ body {
   padding: 14px 20px;
   border: 1px solid rgba(21, 31, 45, 0.96);
   border-radius: 20px;
+}
+.details__title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 143%;
+  color: rgba(21, 31, 45, 0.96);
+  margin-bottom: 24px;
 }
 
 .footer {
