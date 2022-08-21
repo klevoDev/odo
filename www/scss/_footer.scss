@@ -17,6 +17,10 @@
 
     &__item {
         margin-left: 24px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
     }
 
     &__logo {
@@ -43,56 +47,11 @@
     &__telegram {
     }
 
-    &__form {
-    }
-
-    &__wrap-input {
-        margin-top: 30px;
-
-        width: 320px;
-        height: 48px;
-
-        margin: 0 auto;
-        margin-left: 8px;
-    }
-
-    &__input {
-        width: 100%;
-        height: 100%;
-
-        background: $colorWhite;
-        border-radius: 16px;
-        padding: 0 18px;
-
-        font-family: $fontOpenSans;
-        font-size: 14px;
-        line-height: 143%;
-        color: $colorBlack;
-
-        outline: none;
-
-        &::placeholder {
-            color: rgba(110, 133, 171, 0.5);
-        }
-    }
-
     &__wrap-subscribe {
-        margin-left: 8px;
+        margin-left: 24px;
     }
 
     &__subscribe {
-    }
-}
-
-@media (max-width: 1336px) {
-    .footer {
-        &__logo {
-            margin-right: 16px;
-        }
-
-        &__wrap-input {
-            width: 240px;
-        }
     }
 }
 
@@ -102,18 +61,21 @@
             flex-direction: column;
         }
 
+        &__logo {
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
         &__list {
             flex-direction: column;
+
+            margin-bottom: 30px;
         }
 
         &__item {
-        }
+            margin-left: 0;
 
-        &__logo {
-            margin-bottom: 20px;
-        }
-
-        &__ref {
+            margin-bottom: 15px;
         }
 
         &__wrap-sub {
@@ -121,26 +83,11 @@
         }
 
         &__wrap-telegram {
-            margin-bottom: 20px;
-        }
-
-        &__telegram {
-        }
-
-        &__form {
-        }
-
-        &__wrap-input {
-            margin-bottom: 20px;
-        }
-
-        &__input {
+            margin-bottom: 30px;
         }
 
         &__wrap-subscribe {
-        }
-
-        &__subscribe {
+            margin-left: 0;
         }
     }
 }
