@@ -332,6 +332,51 @@ body {
   max-width: 100%;
 }
 
+@media (max-width: 1335px) {
+  .start__heading {
+    font-size: 100px;
+  }
+}
+@media (max-width: 1023px) {
+  .start__heading {
+    font-size: 80px;
+  }
+  .start__text {
+    font-size: 20px;
+  }
+  .start__wrap-picture {
+    flex: 0 0 418px;
+  }
+  .start__wrap-picture::before {
+    top: 40px;
+    left: -320px;
+    width: 411px;
+    height: 408px;
+  }
+}
+@media (max-width: 767px) {
+  .start__body {
+    padding: 0;
+  }
+  .start__subheading {
+    text-align: center;
+    font-size: 20px;
+  }
+  .start__heading {
+    text-align: center;
+    font-size: 60px;
+  }
+  .start__text {
+    text-align: center;
+    font-size: 15px;
+  }
+  .start__wrap-subscribe {
+    text-align: center;
+  }
+  .start__wrap-picture {
+    display: none;
+  }
+}
 .blog__wrap-blog {
   margin: 0 auto;
   padding: 32px;
@@ -532,7 +577,6 @@ body {
 }
 .tickets__stack {
   display: flex;
-  font-weight: 600;
   font-size: 14px;
   line-height: 143%;
   color: #38b5cf;
@@ -618,6 +662,22 @@ body {
 }
 .tickets__wrap-cartoon {
   text-align: right;
+}
+@media (max-width: 1335px) {
+  .tickets__company-info {
+    display: inline-block;
+  }
+  .tickets__about-company {
+    margin-left: 0;
+  }
+  .tickets__button {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 1023px) {
+  .tickets__column {
+    flex: 0 1 50%;
+  }
 }
 .page__statistics {
   margin-bottom: 56px;
@@ -845,6 +905,25 @@ body {
   color: #6e85ab;
 }
 
+@media (max-width: 1023px) {
+  .completed__column {
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 767px) {
+  .completed__row-data {
+    flex-direction: column;
+  }
+  .completed__subheading {
+    margin-bottom: 30px;
+  }
+  .completed__wrap-month:nth-child(2) {
+    display: none;
+  }
+  .completed__wrap-month:nth-child(3) {
+    display: none;
+  }
+}
 .details__wrap {
   padding: 48px;
   max-width: 1312px;

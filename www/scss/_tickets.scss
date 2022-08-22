@@ -38,7 +38,6 @@
     &__stack {
         display: flex;
 
-        font-weight: 600;
         font-size: 14px;
         line-height: 143%;
 
@@ -160,5 +159,99 @@
     }
 
     &__cartoon {
+    }
+}
+
+@media (max-width: 1335px) {
+    .tickets {
+        &__company-info {
+            display: inline-block;
+        }
+
+        &__about-company {
+            margin-left: 0;
+        }
+
+        &__button {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .tickets {
+        &__column {
+            flex: 0 1 50%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .tickets {
+        &__row {
+        }
+
+        &__column {
+        }
+
+        &__item {
+        }
+
+        &__title {
+        }
+
+        &__stack {
+        }
+
+        &__point {
+        }
+
+        &__data-list {
+        }
+
+        &__data-point {
+        }
+
+        &__company-info {
+        }
+
+        &__wrap-logo {
+        }
+
+        &__logo {
+        }
+
+        &__about-company {
+        }
+
+        &__span-company {
+        }
+
+        &__wrap-button {
+        }
+
+        &__button {
+        }
+
+        &__more {
+        }
+
+        &__item-shadow {
+        }
+
+        &__title-shadow {
+        }
+
+        &__wrap-img-load {
+        }
+
+        &__wrap-load {
+        }
+
+        &__wrap-cartoon {
+        }
+
+        &__cartoon {
+        }
     }
 }
