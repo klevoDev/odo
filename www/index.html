@@ -182,28 +182,18 @@
                         </h2>
                         <ul class="completed__list-data">
                             <li class="completed__left-button">
-                                <a class="completed__left _icon-data-left" href="#"></a>
+                                <a class="completed__left _icon-data-left" @click="prevCompletedMonths"></a>
                             </li>
-                            <li class="completed__wrap-month">
-                                <a class="completed__month" href="#">
-                                    Август
+                            <li v-for="m in stats.completedMonths" class="completed__wrap-month">
+                                <a class="completed__month" :href="m.link">
+                                    {{m.name}}
                                 </a>
                             </li>
-                            <li class="completed__wrap-month">
-                                <a class="completed__month" href="#">
-                                    Сентябрь
-                                </a>
+                            <li class="completed__rigth-button" @click="nextCompletedMonths">
+                                <a class="completed__rigth _icon-data-right"></a>
                             </li>
-                            <li class="completed__wrap-month">
-                                <a class="completed__month" href="#">
-                                    Октябрь
-                                </a>
-                            </li>
-                            <li class="completed__rigth-button">
-                                <a class="completed__rigth _icon-data-right" href="#"></a>
-                            </li>
-                            <li class="completed__year">
-                                2022
+                            <li v-for="y in stats.completedYears" class="completed__year">
+                                {{y.name}}
                             </li>
                         </ul>
                     </div>

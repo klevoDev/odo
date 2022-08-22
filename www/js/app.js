@@ -74,14 +74,34 @@ var App = {
     const yandex1 = companies.find(c => c.id === 'Yandex1')
     const oftenHiredCompanies = (new Array(3)).fill(yandex1)
 
+    const completedMonths = [
+      { name: 'Август', link: '#' },
+      { name: 'Сентябрь', link: '#' },
+      { name: 'Октябрь', link: '#' }
+    ]
+
+    const completedYears = [
+      { name: '2022', link: '#' }
+    ]
+
     return {
       cards,
       completed,
       stats: {
         completed: completed.length,
         fastHireCompanies: 4,
-        oftenHiredCompanies
+        oftenHiredCompanies,
+        completedMonths,
+        completedYears
       }
+    }
+  },
+  methods: {
+    prevCompletedMonths: () => {
+      alert('Листаем влево')
+    },
+    nextCompletedMonths: () => {
+      alert('Листаем вправо')
     }
   }
 }
