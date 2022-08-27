@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/klevoDev/odo#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "toastr": "^2.1.4",
     "vue": "^3.2.37"
   }
 }
