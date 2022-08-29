@@ -15,7 +15,7 @@ const App = {
   }
 }
 
-App.methods.getData('https://odo.local/server/cards.php')
+App.methods.getData('https://xn--80aaadulecob1bpnyg.xn--p1ai/odo/api/cards.php')
   .then(resp => {
     // toastr.success('Карточки успешно получены')
     const cardsAll = resp.data.data
@@ -54,5 +54,3 @@ App.methods.getData('https://odo.local/server/cards.php')
     console.log(err)
     // toastr.error(err.message)
   })
-
-
