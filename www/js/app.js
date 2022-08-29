@@ -15,37 +15,23 @@ const App = {
   }
 }
 
-App.methods.getData('https://xn--80aaadulecob1bpnyg.xn--p1ai/odo/api/cards.php')
+const apiBase = 'https://xn--80aaadulecob1bpnyg.xn--p1ai/odo/api/'
+Promise.all([
+  App.methods.getData(`${apiBase}cards.php`),
+  App.methods.getData(`${apiBase}stats.php`)
+])
   .then(resp => {
     // toastr.success('Карточки успешно получены')
-    const cardsAll = resp.data.data
+    const cardsAll = resp[0].data.data
+    const stats = resp[1].data.data
 
     const cards = cardsAll.filter(c => c.status === 'active')
     const completed = cardsAll.filter(c => c.status === 'completed')
 
-    // const yandex1 = companies.find(c => c.id === 'Yandex1')
-    const oftenHiredCompanies = [] // (new Array(3)).fill(yandex1)
-
-    const completedMonths = [
-      { name: 'Август', link: '#' },
-      { name: 'Сентябрь', link: '#' },
-      { name: 'Октябрь', link: '#' }
-    ]
-
-    const completedYears = [
-      { name: '2022', link: '#' }
-    ]
-
     initData = {
       cards,
       completed,
-      stats: {
-        completed: completed.length,
-        fastHireCompanies: 4,
-        oftenHiredCompanies,
-        completedMonths,
-        completedYears
-      }
+      stats: stats
     }
 
     Vue.createApp(App).mount('#app')
