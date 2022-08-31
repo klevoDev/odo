@@ -9,24 +9,34 @@
       exit();
     }
 
-    // date('Y-m-d H:i:s')
-    $insQuery = "INSERT INTO `subscriptions` (`email`, `status`)" .
-      " VALUES ('" .$_POST['email'] . "', 'active')";
+    $email = trim($_POST['email']);
+    $res = $mysqli->query('SELECT COUNT(*) FROM `' . $tableName . '` WHERE `email` = \'' . $email . '\'');
+    $row = $res->fetch_row();
+    if ($row[0] == 0) {
+      $insQuery = "INSERT INTO `" . $tableName . "` (`email`, `status`)" .
+        " VALUES ('" . $_POST['email'] . "', 'active')";
 
-    if ($mysqli->query($insQuery)) {
-      $id = $mysqli->insert_id;
-      $res = $mysqli->query("SELECT * FROM `subscriptions` WHERE `id` = " . $id);
-      $row = $res->fetch_row();
-      $result = [
-        'success' => true,
-        'data' => $row,
-        'message' => 'OK'
-      ];
-      $res->free_result();
-    } else if ($mysql->errno) {
+      if ($mysqli->query($insQuery)) {
+        $id = $mysqli->insert_id;
+        $res = $mysqli->query('SELECT * FROM `' . $tableName . '` WHERE `id` = ' . $id);
+        $row = $res->fetch_row();
+        $result = [
+          'success' => true,
+          'data' => $row,
+          'message' => 'OK'
+        ];
+        $res->free_result();
+      } else if ($mysql->errno) {
+        $result = [
+          'success' => false,
+          'message' => $mysqli->error
+        ];
+      }
+    } else {
       $result = [
         'success' => false,
-        'message' => $mysqli->error
+        'data' => $email,
+        'message' => 'Already subscribed'
       ];
     }
 
