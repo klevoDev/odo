@@ -9,7 +9,7 @@
   }
 
   echo '<h1>Подписчики</h1>';
-  $res = $mysqli->query('SELECT * FROM `' . $tableName);
+  $res = $mysqli->query('SELECT * FROM `' . $tableName . '`');
   echo '<table border="1">';
   while ($row = $res->fetch_row()) {
     echo '<tr>' . '<td>' . $row[0] . '</td><td>' . $row[1] . '</td><td>' . $row[2] .
