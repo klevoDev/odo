@@ -7,14 +7,14 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="container">
         <div class="header__row">
             <div class="header__wrap-logo">
-                <a class="header__logo logo" href="./index.html">
-                    ODO
+                <a class="header__logo" href="/">
+                    <img src="./img/logo-odo.png" alt="Logo one day offer.">
                 </a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li class="header__item">
-                        <a class="header__link" href="index.html">
+                        <a class="header__link" href="/">
                             События
                         </a>
                     </li>
@@ -53,8 +53,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="footer__row">
             <ul class="footer__list">
                 <li class="footer__item">
-                    <a class="footer__logo" href="#">
-                        <img src="./../img/logo-odo.png" alt="Logo one day offer.">
+                    <a class="footer__logo" href="/">
+                        <img src="./img/logo-odo.png" alt="Logo one day offer.">
                     </a>
                 </li>
                 <li class="footer__item">
