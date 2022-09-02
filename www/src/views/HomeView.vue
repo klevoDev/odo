@@ -1,42 +1,54 @@
-<script setup>
-  import { RouterLink } from 'vue-router'
-  import axios from 'axios'
+<script>
+import { RouterLink } from 'vue-router'
+import { reactive } from 'vue'
+import axios from 'axios'
+let initData = reactive({ cards: [{ company: {} }], completed: [{ company: {} }], stats: {} })
+const getData = url => axios.get(url)
 
-  const getData = url => axios.get(url)
-  const prevCompletedMonths = () => {
-    alert('Листаем влево')
-  }
-  const nextCompletedMonths = () => {
-    alert('Листаем вправо')
-  }
-
-  import { ref, onBeforeMount, reactive } from 'vue'
-  let cards = reactive([{ company: {} }])
-  let completed = reactive([{ company: {} }])
-  let stats = reactive({
-    completed: 100
-  })
-
-  // onBeforeMount(() => {
+const loadData = () => {
   const apiBase = 'https://onedayoffer.ru/api/'
-  Promise.all([
+  return Promise.all([
     getData(`${apiBase}cards.php`),
     getData(`${apiBase}stats.php`)
   ])
-  .then(resp => {
-    // toastr.success('Карточки успешно получены')
-    const cardsAll = resp[0].data.data
-    stats = resp[1].data.data
+    .then(resp => {
+      // toastr.success('Карточки успешно получены')
+      const cardsAll = resp[0].data.data
+      initData = {
+        cards: cardsAll.filter(c => c.status === 'active'),
+        completed: cardsAll.filter(c => c.status === 'completed'),
+        stats: resp[1].data.data
+      }
+      console.log('loaded data')
+    })
+    .catch(err => {
+      console.log(err)
+      // toastr.error(err.message)
+    })
+}
 
-    cards = cardsAll.filter(c => c.status === 'active')
-    completed = cardsAll.filter(c => c.status === 'completed')
-  })
-  .catch(err => {
-    console.log(err)
-    // toastr.error(err.message)
-  })
-// })
+export default {
+  data () {
+    return initData
+  },
+  beforeMount () {
+    loadData()
+    console.log('before mount')
+  },
+  mounted () {
+    console.log('mounted')
+  },
+  methods: {
+    prevCompletedMonths: () => {
+      alert('Листаем влево')
+    },
+    nextCompletedMonths: () => {
+      alert('Листаем вправо')
+    }
+  }
+}
 </script>
+
 <template>
   <section class="page__start start">
     <div class="container">
