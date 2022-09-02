@@ -1,6 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+const openConctact = () => {
+  alert('Контакты')
+}
+
 </script>
 <template>
   <header class="header">
@@ -56,7 +60,7 @@ import { RouterLink, RouterView } from 'vue-router'
             </a>
           </li>
           <li class="footer__item">
-            <a class="footer__ref" href="#">
+            <a class="footer__ref" href="/">
               События
             </a>
           </li>
@@ -66,7 +70,7 @@ import { RouterLink, RouterView } from 'vue-router'
             </a>
           </li>
           <li class="footer__item">
-            <a class="footer__ref" href="#">
+            <a class="footer__ref" href="#" @click="openConctact">
               Контакты
             </a>
           </li>

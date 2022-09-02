@@ -1,4 +1,6 @@
 <script setup>
+  import axios from 'axios'
+
   const getData = url => axios.get(url)
   const prevCompletedMonths = () => {
     alert('Листаем влево')
