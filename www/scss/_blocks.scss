@@ -2,8 +2,6 @@
     margin: 30px 0;
     overflow: hidden;
     min-height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
@@ -18,14 +16,6 @@
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: content-box;
-}
-
-.logo {
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 125%;
-
-    color: rgba(21, 31, 45, 0.96);
 }
 
 .subscribe {

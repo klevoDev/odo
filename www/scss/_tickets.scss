@@ -164,6 +164,11 @@
 
 @media (max-width: 1335px) {
     .tickets {
+        &__row {
+            justify-content: center;
+            margin: -16px;
+        }
+
         &__company-info {
             display: inline-block;
         }

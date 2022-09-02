@@ -7,7 +7,5 @@
         font-style: #{$fontStyle};
     }
 }
-@include font("Open Sans", "open-sans-v29-latin-regular", "400", "normal");
-@include font("Open Sans", "open-sans-v29-latin-600", "600", "normal");
-@include font("Open Sans", "open-sans-v29-latin-700", "700", "normal");
-@include font("Open Sans", "open-sans-v29-latin-800", "800", "normal");
+@include font("Century Gothic", "CenturyGothic", "400", "normal");
+@include font("Century Gothic", "CenturyGothic-Bold", "700", "normal");

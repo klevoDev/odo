@@ -15,8 +15,8 @@
             <div class="container">
                 <div class="header__row">
                     <div class="header__wrap-logo">
-                        <a class="header__logo logo" href="./index.html">
-                            ODO
+                        <a class="header__logo" href="./index.html">
+                            <img src="./img/logo-odo.png" alt="Logo one day offer.">
                         </a>
                     </div>
                     <nav class="header__nav">
@@ -82,6 +82,86 @@
             <div class="page__tickets tickets">
                 <div class="container">
                     <div class="tickets__row">
+                        <div v-for="c in cards" class="tickets__column">
+                            <div class="tickets__item">
+                                <h3 class="tickets__title title">
+                                    {{c.name}}
+                                </h3>
+                                <ul class="tickets__stack">
+                                    <li v-for="s in c.stack" class="tickets__point">
+                                        {{s}}
+                                    </li>
+                                </ul>
+                                <ul class="tickets__data-list">
+                                    <li class="tickets__data-point">
+                                        {{c.start}}
+                                    </li>
+                                    <li class="tickets__data-point">
+                                        {{c.finish}}
+                                    </li>
+                                    <li class="tickets__data-point">
+                                        {{c.finish2}}
+                                    </li>
+                                </ul>
+                                <ul class="tickets__company-info">
+                                    <li class="tickets__wrap-logo">
+                                        <img class="tickets__logo" :src="c.company.logo" :alt="c.company.logoAlt">
+                                    </li>
+                                    <li class="tickets__about-company">
+                                        {{c.company.name}} <br>
+                                        <span class="tickets__span-company">
+                                            {{c.company.sub}}
+                                        </span>
+                                    </li>
+                                    <li class="tickets__wrap-button">
+                                        <a class="tickets__button" :href="c.link" target="_blank">
+                                            Участвовать
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div v-for="c in cards" class="tickets__column">
+                            <div class="tickets__item">
+                                <h3 class="tickets__title title">
+                                    {{c.name}}
+                                </h3>
+                                <ul class="tickets__stack">
+                                    <li v-for="s in c.stack" class="tickets__point">
+                                        {{s}}
+                                    </li>
+                                </ul>
+                                <ul class="tickets__data-list">
+                                    <li class="tickets__data-point">
+                                        {{c.start}}
+                                    </li>
+                                    <li class="tickets__data-point">
+                                        {{c.finish}}
+                                    </li>
+                                    <li class="tickets__data-point">
+                                        {{c.finish2}}
+                                    </li>
+                                </ul>
+                                <ul class="tickets__company-info">
+                                    <li class="tickets__wrap-logo">
+                                        <img class="tickets__logo" :src="c.company.logo" :alt="c.company.logoAlt">
+                                    </li>
+                                    <li class="tickets__about-company">
+                                        {{c.company.name}} <br>
+                                        <span class="tickets__span-company">
+                                            {{c.company.sub}}
+                                        </span>
+                                    </li>
+                                    <li class="tickets__wrap-button">
+                                        <a class="tickets__button" :href="c.link" target="_blank">
+                                            Участвовать
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div v-for="c in cards" class="tickets__column">
                             <div class="tickets__item">
                                 <h3 class="tickets__title title">
@@ -242,8 +322,8 @@
                 <div class="footer__row">
                     <ul class="footer__list">
                         <li class="footer__item">
-                            <a class="footer__logo logo" href="#">
-                                ODO
+                            <a class="footer__logo" href="#">
+                                <img src="./img/logo-odo.png" alt="Logo one day offer.">
                             </a>
                         </li>
                         <li class="footer__item">
