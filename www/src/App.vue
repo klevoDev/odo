@@ -1,7 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
-const openConctact = () => {
+const openSubscriptionForm = () => {
+  alert('Подписаться')
+}
+
+const openConctacts = () => {
   alert('Контакты')
 }
 
@@ -11,21 +15,21 @@ const openConctact = () => {
     <div class="container">
       <div class="header__row">
         <div class="header__wrap-logo">
-          <a class="header__logo" href="/">
+          <RouterLink class="header__logo" to="/">
             <img src="./img/logo-odo.png" alt="Logo one day offer.">
-          </a>
+          </RouterLink>
         </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li class="header__item">
-              <a class="header__link" href="/">
+              <RouterLink class="header__link" to="/">
                 События
-              </a>
+              </RouterLink>
             </li>
             <li class="header__item">
-              <a class="header__link" href="/blog">
+              <RouterLink class="header__link" to="/blog">
                 Блог
-              </a>
+              </RouterLink>
             </li>
           </ul>
         </nav>
@@ -36,7 +40,7 @@ const openConctact = () => {
             </a>
           </li>
           <li class="header__item">
-            <a class="header__subscribe subscribe" href="#">
+            <a class="header__subscribe subscribe" href="#" @click="openSubscriptionForm">
               Подписаться на события
             </a>
           </li>
@@ -55,22 +59,22 @@ const openConctact = () => {
       <div class="footer__row">
         <ul class="footer__list">
           <li class="footer__item">
-            <a class="footer__logo" href="/">
+            <RouterLink class="footer__logo" to="/">
               <img src="./img/logo-odo.png" alt="Logo one day offer.">
-            </a>
+            </RouterLink>
           </li>
           <li class="footer__item">
-            <a class="footer__ref" href="/">
+            <RouterLink class="footer__ref" to="/">
               События
-            </a>
+            </RouterLink>
           </li>
           <li class="footer__item">
-            <a class="footer__ref" href="/blog">
+            <RouterLink class="footer__ref" to="/blog">
               Блог
-            </a>
+            </RouterLink>
           </li>
           <li class="footer__item">
-            <a class="footer__ref" href="#" @click="openConctact">
+            <a class="footer__ref" href="#" @click="openConctacts">
               Контакты
             </a>
           </li>
@@ -82,7 +86,7 @@ const openConctact = () => {
             </a>
           </div>
           <div class="footer__wrap-subscribe">
-            <a class="footer__subscribe subscribe" href="#">
+            <a class="footer__subscribe subscribe" href="#" @click="openSubscriptionForm">
               Подписаться на события
             </a>
           </div>

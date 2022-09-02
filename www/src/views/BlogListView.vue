@@ -1,4 +1,8 @@
-﻿<template>
+﻿<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
+<template>
   <div class="page__blog blog">
     <div class="container">
       <div class="blog__wrap-blog">
@@ -17,9 +21,9 @@
               #ключевик #ключевик #ключевик #ключевик
             </div>
             <div class="blog__wrap-more">
-              <a class="blog__more" href="/blog-article">
+              <RouterLink class="blog__more" to="/blog-article">
                 Читать полностью
-              </a>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -44,9 +48,9 @@
               #ключевик #ключевик #ключевик #ключевик
             </div>
             <div class="blog__wrap-more">
-              <a class="blog__more" href="/blog-article">
+              <RouterLink class="blog__more" to="/blog-article">
                 Читать полностью
-              </a>
+              </RouterLink>
             </div>
           </div>
         </div>

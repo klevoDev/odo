@@ -1,10 +1,14 @@
-﻿<template>
+﻿<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
+<template>
   <div class="page__note note">
     <div class="case">
       <div class="note__wrap-back">
-        <a class="note__back _icon-back-arrow" href="/blog">
+        <RouterLink class="note__back _icon-back-arrow" to="/blog">
           Назад к статьям
-        </a>
+        </RouterLink>
       </div>
     </div>
     <div class="container">

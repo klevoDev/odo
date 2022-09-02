@@ -1,4 +1,5 @@
 <script setup>
+  import { RouterLink } from 'vue-router'
   import axios from 'axios'
 
   const getData = url => axios.get(url)

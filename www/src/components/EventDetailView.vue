@@ -1,10 +1,14 @@
-﻿<template>
+﻿<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
+<template>
   <section class="page__details details">
     <div class="container">
       <div class="note__wrap-back">
-        <a class="note__back _icon-back-arrow" href="/">
+        <RouterLink class="note__back _icon-back-arrow" to="/">
           Назад к событиям
-        </a>
+        </RouterLink>
       </div>
       <div class="details__wrap">
         <div class="details__wrap-headig">
