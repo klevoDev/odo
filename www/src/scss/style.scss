@@ -9,6 +9,10 @@
 body {
     font-family: $fontCenturyGothic;
     background: #e1e8f4;
+    background-image: url('./../img/bg-main.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top 0 center;
 }
 
 // * ===== bem blocks ===== * //
