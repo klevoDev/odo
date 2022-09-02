@@ -49,44 +49,44 @@ import { RouterLink, RouterView } from 'vue-router'
   </main>
 
   <footer class="footer">
-      <div class="container">
-          <div class="footer__row">
-              <ul class="footer__list">
-                  <li class="footer__item">
-                      <a class="footer__logo logo" href="#">
-                          ODO
-                      </a>
-                  </li>
-                  <li class="footer__item">
-                      <a class="footer__ref" href="#">
-                          События
-                      </a>
-                  </li>
-                  <li class="footer__item">
-                      <a class="footer__ref" href="./blog-list.html">
-                          Блог
-                      </a>
-                  </li>
-                  <li class="footer__item">
-                      <a class="footer__ref" href="#">
-                          Контакты
-                      </a>
-                  </li>
-              </ul>
-              <div class="footer__wrap-sub">
-                  <div class="footer__wrap-telegram">
-                      <a class="footer__telegram telegram _icon-telegram" href="https://t.me/onedayoffer" target="_blank">
-                          Телеграм канал
-                      </a>
-                  </div>
-                  <div class="footer__wrap-subscribe">
-                      <a class="footer__subscribe subscribe" href="#">
-                          Подписаться на события
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="container">
+        <div class="footer__row">
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a class="footer__logo" href="#">
+                        <img src="./../img/logo-odo.png" alt="Logo one day offer.">
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__ref" href="#">
+                        События
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__ref" href="./blog-list.html">
+                        Блог
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__ref" href="#">
+                        Контакты
+                    </a>
+                </li>
+            </ul>
+            <div class="footer__wrap-sub">
+                <div class="footer__wrap-telegram">
+                    <a class="footer__telegram telegram _icon-telegram" href="https://t.me/onedayoffer" target="_blank">
+                        Телеграм канал
+                    </a>
+                </div>
+                <div class="footer__wrap-subscribe">
+                    <a class="footer__subscribe subscribe" href="#">
+                        Подписаться на события
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
   </footer>
 </template>
 
