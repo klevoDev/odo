@@ -1,10 +1,15 @@
 <script>
 import { RouterLink } from 'vue-router'
+import { inject } from 'vue'
 import axios from 'axios'
 
 const getData = url => axios.get(url)
 
+let apiBase
 export default {
+  setup () {
+    apiBase = inject('apiBase')
+  },
   data () {
     return {
       cards: [],
@@ -22,7 +27,6 @@ export default {
   methods: {
     loadData: function () {
       const self = this
-      const apiBase = 'https://onedayoffer.ru/api/'
       Promise.all([
         getData(`${apiBase}cards.php`),
         getData(`${apiBase}stats.php`)

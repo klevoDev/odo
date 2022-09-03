@@ -1,5 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { provide } from 'vue'
+
+provide('apiBase', 'https://onedayoffer.ru/api/')
+provide('dev', true)
 
 const openSubscriptionForm = () => {
   alert('Подписаться')
