@@ -1,44 +1,45 @@
 <script>
 import { RouterLink } from 'vue-router'
-import { reactive } from 'vue'
 import axios from 'axios'
-let initData = reactive({ cards: [{ company: {} }], completed: [{ company: {} }], stats: {} })
-const getData = url => axios.get(url)
 
-const loadData = () => {
-  const apiBase = 'https://onedayoffer.ru/api/'
-  return Promise.all([
-    getData(`${apiBase}cards.php`),
-    getData(`${apiBase}stats.php`)
-  ])
-    .then(resp => {
-      // toastr.success('Карточки успешно получены')
-      const cardsAll = resp[0].data.data
-      initData = {
-        cards: cardsAll.filter(c => c.status === 'active'),
-        completed: cardsAll.filter(c => c.status === 'completed'),
-        stats: resp[1].data.data
-      }
-      console.log('loaded data')
-    })
-    .catch(err => {
-      console.log(err)
-      // toastr.error(err.message)
-    })
-}
+const getData = url => axios.get(url)
 
 export default {
   data () {
-    return initData
+    return {
+      cards: [],
+      completed: [],
+      stats: {}
+    }
   },
   beforeMount () {
-    loadData()
-    console.log('before mount')
+    this.loadData()
+    // console.log('before mount')
   },
   mounted () {
-    console.log('mounted')
+    // console.log('mounted')
   },
   methods: {
+    loadData: function () {
+      const self = this
+      const apiBase = 'https://onedayoffer.ru/api/'
+      Promise.all([
+        getData(`${apiBase}cards.php`),
+        getData(`${apiBase}stats.php`)
+      ])
+        .then(resp => {
+          // toastr.success('Карточки успешно получены')
+          const cardsAll = resp[0].data.data
+          self.cards = cardsAll.filter(c => c.status === 'active')
+          self.completed = cardsAll.filter(c => c.status === 'completed')
+          self.stats = resp[1].data.data
+          console.log('loaded data')
+        })
+        .catch(err => {
+          console.log(err)
+          // toastr.error(err.message)
+        })
+    },
     prevCompletedMonths: () => {
       alert('Листаем влево')
     },
