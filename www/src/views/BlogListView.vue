@@ -4,11 +4,19 @@ import { inject } from 'vue'
 import axios from 'axios'
 
 const getData = url => axios.get(url)
+const setLocalImgs = c => {
+  if (c.image) {
+    c.image = c.image.replace('img/', 'src/img/')
+  }
+  return c
+}
 
 let apiBase
+let dev
 export default {
   setup () {
     apiBase = inject('apiBase')
+    dev = inject('dev')
   },
   data () {
     return {
@@ -24,7 +32,11 @@ export default {
       getData(`${apiBase}articles.php`)
         .then(resp => {
           // toastr.success('Карточки успешно получены')
-          self.articles = resp.data.data
+          if (dev) {
+            self.articles = resp.data.data.map(setLocalImgs)
+          } else {
+            self.articles = resp.data.data
+          }
         })
         .catch(err => {
           console.log(err)

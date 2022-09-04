@@ -4,11 +4,22 @@ import { inject } from 'vue'
 import axios from 'axios'
 
 const getData = url => axios.get(url)
+const setLocalImgs = c => {
+  if (c.company) {
+    c.company.logo = c.company.logo.replace('img/', 'src/img/')
+  }
+  if (c.logo) {
+    c.logo = c.logo.replace('img/', 'src/img/')
+  }
+  return c
+}
 
 let apiBase
+let dev
 export default {
   setup () {
     apiBase = inject('apiBase')
+    dev = inject('dev')
   },
   data () {
     return {
@@ -33,7 +44,11 @@ export default {
       ])
         .then(resp => {
           // toastr.success('Карточки успешно получены')
-          const cardsAll = resp[0].data.data
+          let cardsAll = resp[0].data.data
+          if (dev) {
+            cardsAll = cardsAll.map(setLocalImgs)
+            resp[1].data.data.oftenHiredCompanies = resp[1].data.data.oftenHiredCompanies.map(setLocalImgs)
+          }
           self.cards = cardsAll.filter(c => c.status === 'active')
           self.completed = cardsAll.filter(c => c.status === 'completed')
           self.stats = resp[1].data.data
