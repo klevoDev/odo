@@ -1,10 +1,18 @@
-﻿<script setup>
+﻿<script>
 import { RouterLink } from 'vue-router'
 
-const backToCards = () => {
-  window.location.href = '/' // fast trick
+export default {
+  props: {
+    name: String,
+    company: { name: String, sub: String },
+    stack: [String]
+  },
+  methods: {
+    backToCards: () => {
+      window.location.href = '/' // fast trick
+    }
+  }
 }
-
 </script>
 
 <template>
@@ -18,7 +26,6 @@ const backToCards = () => {
       <div class="details__wrap">
         <div class="details__wrap-headig">
           <h2 class="details__subheading">
-            Frontend Mobile
             {{name}}
           </h2>
           <ul class="details__company-info">
@@ -26,25 +33,16 @@ const backToCards = () => {
               <img class="details__logo" src="./../img/big-logo.png" alt="Company logo providing one day offer.">
             </li>
             <li class="details__about-company">
-              Яндекс <br>
+              {{company.name}} <br>
               <span class="details__span-company">
-                Маркет, B2B
+                {{company.sub}}
               </span>
             </li>
           </ul>
         </div>
         <ul class="details__stack-list">
-          <li class="details__point">
-            HTML
-          </li>
-          <li class="details__point">
-            CSS
-          </li>
-          <li class="details__point">
-            JS
-          </li>
-          <li class="details__point">
-            React
+          <li class="details__point" v-for="s in stack">
+            {{s}}
           </li>
         </ul>
         <div class="details__wrap-stages">
