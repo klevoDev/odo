@@ -1,19 +1,25 @@
 ﻿<script setup>
 import { RouterLink } from 'vue-router'
+
+const backToCards = () => {
+  window.location.href = '/' // fast trick
+}
+
 </script>
 
 <template>
   <section class="page__details details">
     <div class="container">
       <div class="note__wrap-back">
-        <RouterLink class="note__back _icon-back-arrow" to="/">
+        <a class="note__back _icon-back-arrow" href="#" @click="backToCards">
           Назад к событиям
-        </RouterLink>
+        </a>
       </div>
       <div class="details__wrap">
         <div class="details__wrap-headig">
           <h2 class="details__subheading">
             Frontend Mobile
+            {{name}}
           </h2>
           <ul class="details__company-info">
             <li class="details__wrap-logo">
@@ -327,5 +333,6 @@ import { RouterLink } from 'vue-router'
           </div>
         </div>
       </div>
+    </div>
   </section>
 </template>

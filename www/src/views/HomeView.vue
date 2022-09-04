@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { inject } from 'vue'
 import axios from 'axios'
+import OfferCardDetail from '@/components/OfferCardDetail.vue'
 
 const getData = url => axios.get(url)
 const setLocalImgs = c => {
@@ -21,8 +22,12 @@ export default {
     apiBase = inject('apiBase')
     dev = inject('dev')
   },
+  components: {
+    OfferCardDetail
+  },
   data () {
     return {
+      offer: null,
       cards: [],
       completed: [],
       stats: {}
@@ -95,12 +100,13 @@ export default {
       </div>
     </div>
   </section>
-  <div class="page__tickets tickets">
+  <OfferCardDetail v-if="offer" v-bind="offer" />
+  <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
         <div v-for="c in cards" class="tickets__column">
           <div class="tickets__item">
-            <h3 class="tickets__title title">
+            <h3 class="tickets__title title" @click="offer = c">
               {{c.name}}
             </h3>
             <ul class="tickets__stack">
@@ -153,7 +159,7 @@ export default {
       </div>
     </div>
   </div>
-  <section class="page__statistics statistics">
+  <section class="page__statistics statistics" v-if="!offer">
     <div class="container">
       <h2 class="statistics__subheading">
         Статистика августа
@@ -186,7 +192,7 @@ export default {
       </div>
     </div>
   </section>
-  <section class="page__completed completed">
+  <section class="page__completed completed" v-if="!offer">
     <div class="container">
       <div class="completed__row-data">
         <h2 class="completed__subheading">

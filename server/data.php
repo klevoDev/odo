@@ -12,6 +12,7 @@
   $yandex1 = array_filter($companies, function ($c) { return $c['id'] === 'Yandex1'; })[0];
   $cards = [
     [
+      'id' => 1,
       'name' => 'Frontend Mobile 1',
       'company' => $yandex1,
       'stack' => ['HTML', 'CSS', 'JS', 'React'],
@@ -22,6 +23,7 @@
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
     ],
     [
+      'id' => 2,
       'name' => 'Frontend Mobile 2',
       'company' => $yandex1,
       'stack' => ['HTML', 'CSS', 'JS', 'React'],
@@ -32,6 +34,7 @@
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
     ],
     [
+      'id' => 3,
       'name' => 'Frontend Mobile 3',
       'company' => $yandex1,
       'stack' => ['HTML', 'CSS', 'JS', 'React'],
@@ -42,6 +45,7 @@
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
     ],
     [
+      'id' => 4,
       'name' => 'Frontend Mobile 01',
       'company' => $yandex1,
       'stack' => ['HTML', 'CSS', 'JS', 'React'],
@@ -52,6 +56,7 @@
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
     ],
     [
+      'id' => 5,
       'name' => 'Frontend Mobile 02',
       'company' => $yandex1,
       'stack' => ['HTML', 'CSS', 'JS', 'React'],
