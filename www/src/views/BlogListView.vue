@@ -1,51 +1,59 @@
-﻿<script setup>
+﻿<script>
 import { RouterLink } from 'vue-router'
+import { inject } from 'vue'
+import axios from 'axios'
+
+const getData = url => axios.get(url)
+
+let apiBase
+export default {
+  setup () {
+    apiBase = inject('apiBase')
+  },
+  data () {
+    return {
+      articles: []
+    }
+  },
+  beforeMount () {
+    this.loadData()
+  },
+  methods: {
+    loadData: function () {
+      const self = this
+      getData(`${apiBase}articles.php`)
+        .then(resp => {
+          // toastr.success('Карточки успешно получены')
+          self.articles = resp.data.data
+        })
+        .catch(err => {
+          console.log(err)
+          // toastr.error(err.message)
+        })
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="page__blog blog">
+  <div class="page__blog blog" v-for="a in articles">
     <div class="container">
       <div class="blog__wrap-blog">
         <div class="blog__row">
           <div class="blog__wrap-image">
-            <img class="blog__image" src="./../img/pic.jpg" alt="Here is the actual description of the picture.">
+            <img class="blog__image" :src="a.image" :alt="a.imageAlt">
           </div>
           <div class="blog__body">
             <h2 class="blog__subheading subheading">
-              Заголовок длинный в 2 строки
+              {{ a.name }}
             </h2>
             <p class="blog__text">
-              Подзаголовок Подзаголовок Подзаголовок Подзаголовок Подзаголовок длинный описание в 3 строки
+              {{ a.description }}
             </p>
             <div class="blog__tag">
-              #ключевик #ключевик #ключевик #ключевик
-            </div>
-            <div class="blog__wrap-more">
-              <RouterLink class="blog__more" to="/blog-article">
-                Читать полностью
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="page__blog blog">
-    <div class="container">
-      <div class="blog__wrap-blog">
-        <div class="blog__row">
-          <div class="blog__wrap-image">
-            <img class="blog__image" src="./../img/pic.jpg" alt="Here is the actual description of the picture.">
-          </div>
-          <div class="blog__body">
-            <h2 class="blog__subheading subheading">
-              Заголовок длинный в 2 строки
-            </h2>
-            <p class="blog__text">
-              Подзаголовок Подзаголовок Подзаголовок Подзаголовок Подзаголовок длинный описание в 3 строки
-            </p>
-            <div class="blog__tag">
-              #ключевик #ключевик #ключевик #ключевик
+              <span v-for="t in a.tags" style="margin-right: 10px;">
+                {{ t }}
+              </span>
             </div>
             <div class="blog__wrap-more">
               <RouterLink class="blog__more" to="/blog-article">

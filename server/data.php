@@ -62,4 +62,31 @@
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
     ]
   ];
+
+  $articles = [
+    [
+      'id' => 1,
+      'name' => '1. Заголовок длинный в 2 строки',
+      'description' => 'Подзаголовок Подзаголовок Подзаголовок Подзаголовок Подзаголовок длинный описание в 3 строки',
+      'tags' => ['#ключевик', '#ключевик', '#ключевик', '#ключевик'],
+      'image' => './src/img/pic.jpg',
+      'imageAlt' => 'Here is the actual description of the picture.'
+    ],
+    [
+      'id' => 2,
+      'name' => '2. Заголовок длинный в 2 строки',
+      'description' => 'Подзаголовок Подзаголовок Подзаголовок Подзаголовок Подзаголовок длинный описание в 3 строки',
+      'tags' => ['#ключевик', '#ключевик', '#ключевик', '#ключевик'],
+      'image' => './src/img/pic.jpg',
+      'imageAlt' => 'Here is the actual description of the picture.'
+    ],
+    [
+      'id' => 3,
+      'name' => '3. Заголовок длинный в 2 строки',
+      'description' => 'Подзаголовок Подзаголовок Подзаголовок Подзаголовок Подзаголовок длинный описание в 3 строки',
+      'tags' => ['#ключевик', '#ключевик', '#ключевик', '#ключевик'],
+      'image' => './src/img/pic.jpg',
+      'imageAlt' => 'Here is the actual description of the picture.'
+    ]
+  ]
 ?>
