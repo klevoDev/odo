@@ -16,9 +16,9 @@
   $result = [
     'success' => true,
     'data' => [
-      'completed' => count($completedCards),
-      'fastHireCompanies' => 4,
-      'oftenHiredCompanies' => array_fill(0, 3, $yandex1),
+      'completed' => 8, // count($completedCards),
+      'fastHireCompanies' => 5,
+      'oftenHiredCompanies' => [$sber1, $yandex1, $vk1],
       'completedMonths' => $completedMonths,
       'completedYears' => $completedYears
     ],

@@ -88,11 +88,11 @@ export default {
           <p class="start__text">
             Все вакансии быстрого найма от лучших компаний страны
           </p>
-          <div class="start__wrap-subscribe">
+          <!-- <div class="start__wrap-subscribe">
             <a class="start__subscribe subscribe" href="#">
               Подписаться на события
             </a>
-          </div>
+          </div> -->
         </div>
         <div class="start__wrap-picture">
           <img class="start__picture" src="./../img/man.png" alt="A person is looking for a job.">
