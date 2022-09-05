@@ -4,8 +4,9 @@ import { RouterLink } from 'vue-router'
 export default {
   props: {
     name: String,
-    company: { name: String, sub: String },
-    stack: [String]
+    company: { name: String, sub: String, logo: String, logoAlt: String },
+    stack: [String],
+    start: String
   },
   methods: {
     backToCards: () => {
@@ -30,7 +31,7 @@ export default {
           </h2>
           <ul class="details__company-info">
             <li class="details__wrap-logo">
-              <img class="details__logo" src="./../img/big-logo.png" alt="Company logo providing one day offer.">
+              <img class="details__logo" :src="company.logo" :alt="company.logoAlt">
             </li>
             <li class="details__about-company">
               {{company.name}} <br>
@@ -45,7 +46,8 @@ export default {
             {{s}}
           </li>
         </ul>
-        <div class="details__wrap-stages">
+        <!-- TEMP OFF -->
+        <!-- <div class="details__wrap-stages">
           <ul class="details__stage-list">
             <li class="details__stage-one">
               <span class="details__number">
@@ -100,14 +102,15 @@ export default {
               </span>
             </li>
           </ul>
-        </div>
+        </div> -->
         <div class="details__topic topic">
           Где когда и во сколько?
         </div>
         <p class="details__text text-details">
-          25 и 26 августа с 10:00 до 19:00 по мск, онлайн
+          {{start}}
         </p>
-        <div class="details__topic topic">
+        <!-- TEMP OFF -->
+        <!-- <div class="details__topic topic">
           Требования к участникам?
         </div>
         <p class="details__text text-details">
@@ -126,7 +129,7 @@ export default {
         </div>
         <p class="details__text text-details">
           После регистрации вам придет ссылка на Яндекс.Контест, который вы сможете решить в удобное для вас время. После чего с вами свяжется рекрутер, чтобы познакомиться и рассказать подробнее о мероприятии.
-        </p>
+        </p> -->
         <div class="details__wrap-button">
           <a class="details__button" href="https://yandex.ru/promo/events/fasttrack_crowd?from=home">
             Участвовать

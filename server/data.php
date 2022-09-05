@@ -27,13 +27,21 @@
       'sub' => 'VK Звонки',
       'logo' => './img/vk.png',
       'logoAlt' => 'VK Звонки'
-    ]
+    ],
+    [
+      'id' => 'Tinkoff1',
+      'name' => 'Тинькофф',
+      'sub' => '',
+      'logo' => './img/tinkoff.png',
+      'logoAlt' => 'Тинькофф'
+    ],
   ];
 
   $sber1 = $companies[0];
   $yandex1 = $companies[1]; // array_filter($companies, function ($c) { return $c['id'] === 'Yandex1'; })[0];
   $yandex2 = $companies[2];
   $vk1 = $companies[3]; // array_filter($companies, function ($c) { return $c['id'] === 'VK1'; })[0];
+  $tinkoff1 = $companies[4];
 
   $cards = [
     [
@@ -55,9 +63,21 @@
       'stack' => ['Опыт от 3 лет', 'JavaScript', 'TypeScript'],
       'status' => 'active',
       'start' => '24 сентября с 10:00',
-      'finish' => '',
+      // 'start1' => '25 и 26 августа с 10:00 до 19:00 по мск, онлайн',
+      'finish' => '&nbsp;',
       'finish2' => 'Заявки принимаются до 20.09.2022',
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
+    ],
+    [
+      'id' => 3,
+      'name' => 'QA-инженеры',
+      'company' => $tinkoff1,
+      'stack' => ['Опыт от 2 лет'],
+      'status' => 'active',
+      'start' => '17 сентября, суббота',
+      'finish' => 'с 10:00 до 20:00 по мск онлайн',
+      'finish2' => 'Заявки принимаются до 15.09.2022',
+      'link' => 'https://one-day-offer.tinkoff.ru/qa/?internal_source=main_1do'
     ],
     // [
     //   'id' => 3,

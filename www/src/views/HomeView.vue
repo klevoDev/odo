@@ -100,13 +100,13 @@ export default {
       </div>
     </div>
   </section>
-  <OfferCardDetail v-if="offer" v-bind="offer" />
+  <!-- <OfferCardDetail v-if="offer" v-bind="offer" /> -->
   <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
         <div v-for="c in cards" class="tickets__column">
           <div class="tickets__item">
-            <h3 class="tickets__title title" @click="offer = c">
+            <h3 class="tickets__title title">
               {{c.name}}
             </h3>
             <ul class="tickets__stack">
@@ -119,7 +119,7 @@ export default {
                 {{c.start}}
               </li>
               <li class="tickets__data-point">
-                {{c.finish}}
+                <span v-html="c.finish"></span>
               </li>
               <li class="tickets__data-point">
                 {{c.finish2}}
@@ -192,7 +192,7 @@ export default {
       </div>
     </div>
   </section>
-  <section class="page__completed completed" v-if="!offer">
+  <!-- <section class="page__completed completed" v-if="!offer">
     <div class="container">
       <div class="completed__row-data">
         <h2 class="completed__subheading">
@@ -252,5 +252,5 @@ export default {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
