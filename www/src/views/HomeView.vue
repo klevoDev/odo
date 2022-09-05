@@ -100,11 +100,11 @@ export default {
       </div>
     </div>
   </section>
-  <!-- <OfferCardDetail v-if="offer" v-bind="offer" /> -->
+  <OfferCardDetail v-if="offer" v-bind="offer" />
   <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
-        <div v-for="c in cards" class="tickets__column">
+        <div class="tickets__column" v-for="c in cards" @click="offer = c">
           <div class="tickets__item">
             <h3 class="tickets__title title">
               {{c.name}}

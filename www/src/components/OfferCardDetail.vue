@@ -46,8 +46,7 @@ export default {
             {{s}}
           </li>
         </ul>
-        <!-- TEMP OFF -->
-        <!-- <div class="details__wrap-stages">
+        <div class="details__wrap-stages">
           <ul class="details__stage-list">
             <li class="details__stage-one">
               <span class="details__number">
@@ -102,15 +101,14 @@ export default {
               </span>
             </li>
           </ul>
-        </div> -->
+        </div>
         <div class="details__topic topic">
           Где когда и во сколько?
         </div>
         <p class="details__text text-details">
           {{start}}
         </p>
-        <!-- TEMP OFF -->
-        <!-- <div class="details__topic topic">
+        <div class="details__topic topic">
           Требования к участникам?
         </div>
         <p class="details__text text-details">
@@ -129,7 +127,7 @@ export default {
         </div>
         <p class="details__text text-details">
           После регистрации вам придет ссылка на Яндекс.Контест, который вы сможете решить в удобное для вас время. После чего с вами свяжется рекрутер, чтобы познакомиться и рассказать подробнее о мероприятии.
-        </p> -->
+        </p>
         <div class="details__wrap-button">
           <a class="details__button" href="https://yandex.ru/promo/events/fasttrack_crowd?from=home">
             Участвовать
