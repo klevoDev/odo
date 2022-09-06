@@ -139,7 +139,7 @@ body {
 
 .subheading {
   font-weight: 800;
-  font-size: 24px;
+  font-size: 32px;
   line-height: 125%;
   color: rgba(21, 31, 45, 0.96);
 }
@@ -171,7 +171,7 @@ body {
 
 .title {
   font-weight: 800;
-  font-size: 28px;
+  font-size: 32px;
   line-height: 125%;
   color: rgba(21, 31, 45, 0.96);
 }
@@ -272,12 +272,7 @@ body {
   flex: 1 1 auto;
   margin-bottom: 48px;
 }
-.page__tickets {
-  margin-bottom: 48px;
-}
-.page__statistics {
-  margin-bottom: 56px;
-}
+
 .start__row {
   display: flex;
 }
@@ -532,6 +527,10 @@ body {
     text-align: center;
   }
 }
+.page__tickets {
+  margin-bottom: 48px;
+}
+
 .tickets__row {
   display: flex;
   margin: 0 -16px;
@@ -544,7 +543,7 @@ body {
 .tickets__item {
   padding: 32px;
   background: #fff;
-  border-radius: 24px;
+  border-radius: 32px;
   transition: all 0.3s ease 0s;
   height: 100%;
   display: flex;
@@ -573,7 +572,7 @@ body {
   margin-left: 0;
 }
 .tickets__data-list {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 150%;
   color: rgba(21, 31, 45, 0.96);
@@ -588,35 +587,36 @@ body {
   color: #6e85ab;
   margin-bottom: 0;
 }
-.tickets__wrap-company-info {
+.tickets__company-info {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+.tickets__logo {
+  border-radius: 50%;
 }
 .tickets__about-company {
-  position: relative;
-  padding-left: 52px;
-  font-size: 20px;
-  line-height: 150%;
-  color: #151f2d;
+  padding-top: 13px;
+  margin-left: 16px;
 }
-.tickets__about-company::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  background: url("./../img/vk.png") 0 0/contain no-repeat;
-}
-.tickets__button {
-  padding: 10px 16px;
-  border: 1px solid #151f2d;
-  border-radius: 16px;
-  font-weight: 700;
+.tickets__span-company {
   font-size: 14px;
   line-height: 143%;
-  color: #151f2d;
+  color: #6e85ab;
+}
+.tickets__wrap-button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+}
+.tickets__button {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  padding: 10px 16px;
+  color: rgba(21, 31, 45, 0.96);
+  border: 1px solid rgba(21, 31, 45, 0.96);
+  border-radius: 16px;
 }
 .tickets__item-shadow {
   padding: 32px 0 0 0;
@@ -630,7 +630,7 @@ body {
   text-align: center;
   margin: 0 auto;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 32px;
   line-height: 125%;
   width: 281px;
   text-align: center;
@@ -663,6 +663,10 @@ body {
     flex: 0 1 50%;
   }
 }
+.page__statistics {
+  margin-bottom: 56px;
+}
+
 .statistics__subheading {
   text-align: center;
   font-weight: 600;

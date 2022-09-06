@@ -18,14 +18,14 @@ const setLocalImgs = c => {
 let apiBase
 let dev
 export default {
-  setup () {
+  setup() {
     apiBase = inject('apiBase')
     dev = inject('dev')
   },
   components: {
     OfferCardDetail
   },
-  data () {
+  data() {
     return {
       offer: null,
       cards: [],
@@ -33,11 +33,11 @@ export default {
       stats: {}
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.loadData()
     // console.log('before mount')
   },
-  mounted () {
+  mounted() {
     // console.log('mounted')
   },
   methods: {
@@ -104,16 +104,20 @@ export default {
   <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
+        <!-- начало карточки -->
         <div class="tickets__column" v-for="c in cards" @click="offer = c">
           <div class="tickets__item">
+            <!-- заголовок карточки -->
             <h3 class="tickets__title title">
               {{c.name}}
             </h3>
+            <!-- перечесление навыков -->
             <ul class="tickets__stack">
               <li v-for="s in c.stack" class="tickets__point">
                 {{s}}
               </li>
             </ul>
+            <!-- дата проведения события -->
             <ul class="tickets__data-list">
               <li class="tickets__data-point">
                 {{c.start}}
@@ -125,24 +129,20 @@ export default {
                 {{c.finish2}}
               </li>
             </ul>
-            <ul class="tickets__company-info">
-              <li class="tickets__wrap-logo">
-                <img class="tickets__logo" :src="c.company.logo" :alt="c.company.logoAlt">
-              </li>
-              <li class="tickets__about-company">
-                {{c.company.name}} <br>
-                <span class="tickets__span-company">
-                  {{c.company.sub}}
-                </span>
-              </li>
-              <li class="tickets__wrap-button">
+            <!-- лого компаниии и кнопка -->
+            <div class="tickets__wrap-company-info">
+              <div class="tickets__about-company">
+                {{c.company.name}}
+              </div>
+              <div class="tickets__wrap-button">
                 <a class="tickets__button" :href="c.link" target="_blank">
                   Участвовать
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- карточка с картинкой скоро новое событие -->
         <div class="tickets__column">
           <div class="tickets__item-shadow">
             <h3 class="tickets__title-shadow">
@@ -192,7 +192,7 @@ export default {
       </div>
     </div>
   </section>
-  <!-- <section class="page__completed completed" v-if="!offer">
+  <section class="page__completed completed" v-if="!offer">
     <div class="container">
       <div class="completed__row-data">
         <h2 class="completed__subheading">
@@ -252,5 +252,5 @@ export default {
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 </template>
