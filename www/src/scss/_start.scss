@@ -19,17 +19,17 @@
         letter-spacing: 0.02em;
         text-transform: uppercase;
 
-        color: #151f2d;
+        color: $colorGarkBlue;
 
         margin-bottom: 16px;
     }
 
     &__text {
-        font-weight: 400;
+        max-width: 599px;
         font-size: 28px;
         line-height: 143%;
 
-        color: rgba(21, 31, 45, 0.96);
+        color: $colorGarkBlue;
 
         margin-bottom: 32px;
     }

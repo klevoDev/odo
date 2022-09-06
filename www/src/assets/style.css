@@ -138,10 +138,10 @@ body {
 }
 
 .subheading {
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 125%;
-  color: rgba(21, 31, 45, 0.96);
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 120%;
+  color: #151f2d;
 }
 
 .telegram {
@@ -160,20 +160,20 @@ body {
   font-size: 13px;
 }
 .telegram:hover {
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 
 .text {
   font-size: 14px;
   line-height: 143%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 
 .title {
   font-weight: 800;
   font-size: 28px;
   line-height: 125%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 
 .topic {
@@ -188,7 +188,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 24px;
 }
 
@@ -214,7 +214,7 @@ body {
   transition: all 0.3s ease 0s;
 }
 .header__link:hover {
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 .header__subscribe-list {
   display: flex;
@@ -243,7 +243,7 @@ body {
   .header__burger::before {
     content: "";
     position: absolute;
-    background-color: rgba(21, 31, 45, 0.96);
+    background-color: #151f2d;
     right: 0;
     top: 0;
     width: 100%;
@@ -252,7 +252,7 @@ body {
   .header__burger::after {
     content: "";
     position: absolute;
-    background-color: rgba(21, 31, 45, 0.96);
+    background-color: #151f2d;
     right: 0;
     bottom: 0;
     width: 100%;
@@ -261,7 +261,7 @@ body {
   .header__span-burger::before {
     content: "";
     position: absolute;
-    background-color: rgba(21, 31, 45, 0.96);
+    background-color: #151f2d;
     top: 11px;
     right: 0;
     width: 100%;
@@ -295,10 +295,10 @@ body {
   margin-bottom: 16px;
 }
 .start__text {
-  font-weight: 400;
+  max-width: 599px;
   font-size: 28px;
   line-height: 143%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 32px;
 }
 .start__wrap-picture {
@@ -395,7 +395,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 21px;
 }
 .blog__tag {
@@ -412,8 +412,8 @@ body {
 }
 .blog__more {
   padding: 10px 16px;
-  color: rgba(21, 31, 45, 0.96);
-  border: 1px solid rgba(21, 31, 45, 0.96);
+  color: #151f2d;
+  border: 1px solid #151f2d;
   border-radius: 16px;
 }
 
@@ -472,13 +472,13 @@ body {
   font-size: 13px;
 }
 .note__back:hover {
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 .note__body {
   margin: 0 auto;
   padding: 32px 48px;
   max-width: 900px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 24px;
 }
 .note__subheading {
@@ -488,7 +488,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 16px;
 }
 .note__topic {
@@ -576,7 +576,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 24px;
 }
 .tickets__data-point {
@@ -665,12 +665,11 @@ body {
 }
 .statistics__subheading {
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 28px;
   line-height: 143px;
   color: #fff;
   text-shadow: 0px 4px 6px rgba(110, 133, 171, 0.1);
-  margin-bottom: 24px;
 }
 .statistics__row {
   display: flex;
@@ -684,7 +683,7 @@ body {
   display: flex;
 }
 .statistics__number {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 140px;
   line-height: 107%;
   letter-spacing: 0.02em;
@@ -693,7 +692,7 @@ body {
   text-shadow: 0px 4px 10px rgba(110, 133, 171, 0.1);
 }
 .statistics__event {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24px;
   line-height: 133%;
   color: #fff;
@@ -708,7 +707,7 @@ body {
   display: flex;
 }
 .statistics__biz {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24px;
   line-height: 133%;
   color: #fff;
@@ -738,7 +737,7 @@ body {
   height: 24px;
 }
 .statistics__span {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   line-height: 150%;
   color: rgba(21, 31, 45, 0.96);
@@ -747,7 +746,7 @@ body {
 .statistics__text-top {
   padding: 28px 40.5px 28px 16px;
   width: 127px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24px;
   line-height: 132%;
   color: #fff;
@@ -840,7 +839,7 @@ body {
   transition: all 0.3s ease 0s;
 }
 .completed__month:hover {
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 .completed__rigth {
   position: relative;
@@ -969,7 +968,7 @@ body {
   font-size: 70px;
   line-height: 129%;
   letter-spacing: 0.02em;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 17px;
 }
 .details__company-info {
@@ -982,7 +981,7 @@ body {
   font-weight: 400;
   font-size: 32px;
   line-height: 125%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-left: 16px;
 }
 .details__span-company {
@@ -1025,7 +1024,7 @@ body {
   font-weight: 600;
   font-size: 32px;
   line-height: 125%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 .details__line {
   margin: 30px 16px 0 16px;
@@ -1058,16 +1057,16 @@ body {
 .details__button {
   font-size: 16px;
   line-height: 150%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   padding: 14px 20px;
-  border: 1px solid rgba(21, 31, 45, 0.96);
+  border: 1px solid #151f2d;
   border-radius: 20px;
 }
 .details__title {
   font-weight: 600;
   font-size: 28px;
   line-height: 143%;
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
   margin-bottom: 24px;
 }
 
@@ -1169,7 +1168,7 @@ body {
   transition: all 0.3s ease 0s;
 }
 .footer__ref:hover {
-  color: rgba(21, 31, 45, 0.96);
+  color: #151f2d;
 }
 .footer__wrap-sub {
   display: flex;

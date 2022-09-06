@@ -30,7 +30,7 @@
         transition: all 0.3s ease 0s;
 
         &:hover {
-            color: rgba(21, 31, 45, 0.96);
+            color: $colorGarkBlue;
         }
     }
 
@@ -76,7 +76,7 @@
             &::before {
                 content: "";
                 position: absolute;
-                background-color: rgba(21, 31, 45, 0.96);
+                background-color: $colorGarkBlue;
                 right: 0;
                 top: 0;
 
@@ -87,7 +87,7 @@
             &::after {
                 content: "";
                 position: absolute;
-                background-color: rgba(21, 31, 45, 0.96);
+                background-color: $colorGarkBlue;
                 right: 0;
                 bottom: 0;
 
@@ -100,7 +100,7 @@
             &::before {
                 content: "";
                 position: absolute;
-                background-color: rgba(21, 31, 45, 0.96);
+                background-color: $colorGarkBlue;
                 top: 11px;
                 right: 0;
 

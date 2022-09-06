@@ -36,11 +36,11 @@
 }
 
 .subheading {
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 125%;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 120%;
 
-    color: rgba(21, 31, 45, 0.96);
+    color: $colorGarkBlue;
 }
 
 .telegram {
@@ -63,7 +63,7 @@
     }
 
     &:hover {
-        color: rgba(21, 31, 45, 0.96);
+        color: $colorGarkBlue;
     }
 }
 
@@ -79,7 +79,7 @@
     font-size: 28px;
     line-height: 125%;
 
-    color: rgba(21, 31, 45, 0.96);
+    color: $colorGarkBlue;
 }
 
 .topic {
@@ -97,7 +97,7 @@
     font-size: 18px;
     line-height: 150%;
 
-    color: rgba(21, 31, 45, 0.96);
+    color: $colorGarkBlue;
 
     margin-bottom: 24px;
 }
