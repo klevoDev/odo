@@ -6,7 +6,7 @@ const close = () => {
 
 <template>
   <section class="page__contact-pop contact-pop">
-    <div class="container">
+    <div class="container" @click="close">
       <div class="contact-pop__column">
         <div class="contact-pop__item">
           <div class="contact-pop__wrap-pop-img">
@@ -43,7 +43,22 @@ const close = () => {
 </template>
 
 <style>
-  .contact-pop__item {
+.contact-pop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:  100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.contact-pop__column {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 10%;
+    margin-left: 30%;
+}
+.contact-pop__item {
   background-color: #fff;
   border-radius: 28px;
 }
