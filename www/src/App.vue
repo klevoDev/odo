@@ -1,19 +1,33 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 import { provide } from 'vue'
+import ContactsCard from '@/components/ContactsCard.vue'
 
-provide('apiBase', 'https://onedayoffer.ru/api/')
-provide('dev', true)
-
-const openSubscriptionForm = () => {
-  alert('Подписаться')
+export default {
+  setup () {
+    provide('apiBase', 'https://onedayoffer.ru/api/')
+    provide('dev', true)
+  },
+  components: {
+    ContactsCard
+  },
+  data () {
+    return {
+      subscriptionOpened: false,
+      contactsOpened: false
+    }
+  },
+  methods: {
+    openSubscriptionForm: function () {
+      this.subscriptionOpened = true
+    },
+    openConctacts: function () {
+      this.contactsOpened = true
+    }
+  }
 }
-
-const openConctacts = () => {
-  alert('Контакты')
-}
-
 </script>
+
 <template>
   <header class="header">
     <div class="container">
@@ -83,6 +97,7 @@ const openConctacts = () => {
             </a>
           </li>
         </ul>
+        <ContactsCard v-if="contactsOpened" />
         <div class="footer__wrap-sub">
           <div class="footer__wrap-telegram">
             <a class="footer__telegram telegram _icon-telegram" href="https://t.me/onedayoffer" target="_blank">
