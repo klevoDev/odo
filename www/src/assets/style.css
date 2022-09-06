@@ -97,10 +97,10 @@ h6 {
 body {
   font-family: "Century Gothic", sans-serif;
   background: #e1e8f4;
-  background-image: url("./../img/bg-main.png");
+  /*background-image: url("./../img/bg-main.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: top 0 center;
+  background-position: top 0 center;*/
 }
 
 .wrapper {

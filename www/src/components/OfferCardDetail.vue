@@ -6,7 +6,7 @@ export default {
     name: String,
     company: { name: String, sub: String, logo: String, logoAlt: String },
     stack: [String],
-    start: String
+    eventDt: String
   },
   methods: {
     backToCards: () => {
@@ -106,7 +106,7 @@ export default {
           Где когда и во сколько?
         </div>
         <p class="details__text text-details">
-          {{start}}
+          {{eventDt}}
         </p>
         <div class="details__topic topic">
           Требования к участникам?

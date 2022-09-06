@@ -18,14 +18,14 @@ const setLocalImgs = c => {
 let apiBase
 let dev
 export default {
-  setup() {
+  setup () {
     apiBase = inject('apiBase')
     dev = inject('dev')
   },
   components: {
     OfferCardDetail
   },
-  data() {
+  data () {
     return {
       offer: null,
       cards: [],
@@ -33,11 +33,11 @@ export default {
       stats: {}
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.loadData()
     // console.log('before mount')
   },
-  mounted() {
+  mounted () {
     // console.log('mounted')
   },
   methods: {
@@ -88,11 +88,11 @@ export default {
           <p class="start__text">
             Все вакансии быстрого найма от лучших компаний страны
           </p>
-          <!-- <div class="start__wrap-subscribe">
+          <div class="start__wrap-subscribe">
             <a class="start__subscribe subscribe" href="#">
               Подписаться на события
             </a>
-          </div> -->
+          </div>
         </div>
         <div class="start__wrap-picture">
           <img class="start__picture" src="./../img/man.png" alt="A person is looking for a job.">
@@ -120,18 +120,19 @@ export default {
             <!-- дата проведения события -->
             <ul class="tickets__data-list">
               <li class="tickets__data-point">
-                {{c.start}}
+                <strong>{{c.eventDt}}</strong>
               </li>
-              <li class="tickets__data-point">
-                <span v-html="c.finish"></span>
+              <li class="tickets__data-point" v-if="c.eventDt2">
+                <strong v-html="c.eventDt2"></strong>
               </li>
-              <li class="tickets__data-point">
-                {{c.finish2}}
+              <li class="tickets__data-info">
+                {{c.eventInfo}}
               </li>
             </ul>
             <!-- лого компаниии и кнопка -->
             <div class="tickets__wrap-company-info">
               <div class="tickets__about-company">
+                <!-- <img :src="c.company.logo" alt="c.company.logoAlt" > -->
                 {{c.company.name}}
               </div>
               <div class="tickets__wrap-button">
@@ -228,13 +229,13 @@ export default {
             </ul>
             <ul class="completed__data-list">
               <li class="completed__data-point">
-                {{c.start}}
+                {{c.eventDt}}
+              </li>
+              <li class="completed__data-point" v-if="c.eventDt2">
+                {{c.eventDt2}}
               </li>
               <li class="completed__data-point">
-                {{c.finish}}
-              </li>
-              <li class="completed__data-point">
-                {{c.finish2}}
+                {{c.eventInfo}}
               </li>
             </ul>
             <ul class="completed__company-info">
