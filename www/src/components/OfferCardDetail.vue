@@ -9,8 +9,8 @@ export default {
     eventDt: String
   },
   methods: {
-    backToCards: () => {
-      window.location.href = '/' // fast trick
+    backToCards: function () {
+      this.$parent.closeOffer()
     }
   }
 }
@@ -24,7 +24,7 @@ export default {
           Назад к событиям
         </a>
       </div>
-      <div class="details__wrap">
+      <div class="details__wrap" @click="backToCards">
         <div class="details__wrap-headig">
           <h2 class="details__subheading">
             {{name}}

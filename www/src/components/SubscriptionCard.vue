@@ -1,16 +1,16 @@
 <script>
 export default {
   methods: {
-    close: () => {
-      window.location.href = '/' // fast trick
+    close: function () {
+      this.$parent.openSubscription(false)
     }
   }
 }
 </script>
 
 <template>
-  <section class="page__subscribe-pop subscribe-pop">
-    <div class="container" @click="close">
+  <section class="page__subscribe-pop subscribe-pop" @click="close">
+    <div class="container">
       <div class="subscribe-pop__column">
         <div class="subscribe-pop__item">
           <div class="subscribe-pop__wrap-pop-img">

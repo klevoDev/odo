@@ -20,11 +20,11 @@ export default {
     }
   },
   methods: {
-    openSubscriptionForm: function () {
-      this.subscriptionOpened = true
+    openSubscription: function (state = true) {
+      this.subscriptionOpened = state
     },
-    openConctacts: function () {
-      this.contactsOpened = true
+    openContacts: function (state = true) {
+      this.contactsOpened = state
     }
   }
 }
@@ -60,7 +60,7 @@ export default {
             </a>
           </li>
           <li class="header__item">
-            <a class="header__subscribe subscribe" href="#" @click="openSubscriptionForm">
+            <a class="header__subscribe subscribe" href="#" @click="openSubscription">
               Подписаться на события
             </a>
           </li>
@@ -95,7 +95,7 @@ export default {
             </RouterLink>
           </li>
           <li class="footer__item">
-            <a class="footer__ref" href="#" @click="openConctacts">
+            <a class="footer__ref" href="#" @click="openContacts">
               Контакты
             </a>
           </li>
@@ -108,7 +108,7 @@ export default {
             </a>
           </div>
           <div class="footer__wrap-subscribe">
-            <a class="footer__subscribe subscribe" href="#" @click="openSubscriptionForm">
+            <a class="footer__subscribe subscribe" href="#" @click="openSubscription">
               Подписаться на события
             </a>
           </div>

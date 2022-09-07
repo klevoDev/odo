@@ -64,6 +64,12 @@ export default {
           // toastr.error(err.message)
         })
     },
+    closeOffer: function () {
+      this.offer = null
+    },
+    openSubscriptionForm: function (state) {
+      this.$parent.openSubscription(state)
+    },
     prevCompletedMonths: () => {
       alert('Листаем влево')
     },
@@ -89,7 +95,7 @@ export default {
             Все вакансии быстрого найма от лучших компаний страны
           </p>
           <div class="start__wrap-subscribe">
-            <a class="start__subscribe subscribe" href="#">
+            <a class="start__subscribe subscribe" href="#" @click="openSubscription">
               Подписаться на события
             </a>
           </div>
