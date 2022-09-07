@@ -1,6 +1,37 @@
 <script>
+import { inject } from 'vue'
+import axios from 'axios'
+import toastr from 'toastr'
+
+let apiBase
 export default {
+  setup () {
+    apiBase = inject('apiBase')
+  },
+  data () {
+    return {
+      email: ''
+    }
+  },
   methods: {
+    subscribe: function () {
+      const email = this.email
+      if (!email) {
+        toastr.warning('Введите email!')
+        return
+      }
+      const formData = new FormData()
+      formData.append('email', this.email)
+      axios({
+        method: 'post',
+        url: `${apiBase}subscribe.php`,
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' }
+      })
+        .then(resp => {
+          toastr.success('Вы успешно подписаны!')
+        })
+    },
     close: function () {
       this.$parent.openSubscription(false)
     }
@@ -9,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <section class="page__subscribe-pop subscribe-pop" @click="close">
+  <section class="page__subscribe-pop subscribe-pop">
     <div class="container">
       <div class="subscribe-pop__column">
         <div class="subscribe-pop__item">
@@ -69,12 +100,12 @@ export default {
             </p>
             <form class="subscribe-pop__form" action="#">
               <div class="subscribe-pop__wrap-input">
-                <input class="subscribe-pop__input" type="text" placeholder="" name="email">
+                <input class="subscribe-pop__input" type="text" placeholder="E-mail" name="email" v-model="email">
               </div>
             </form>
             <div class="subscribe-pop__wrap-buttons">
               <div class="subscribe-pop__write-telegram">
-                <a class="subscribe-pop__link" href="#" target="_blank">
+                <a class="subscribe-pop__link" href="#" @click="subscribe">
                   Подписаться
                 </a>
               </div>

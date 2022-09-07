@@ -67,8 +67,8 @@ export default {
     closeOffer: function () {
       this.offer = null
     },
-    openSubscriptionForm: function (state) {
-      this.$parent.openSubscription(state)
+    openSubscription: function (state) {
+      this.$parent.$parent.openSubscription(state)
     },
     prevCompletedMonths: () => {
       alert('Листаем влево')
