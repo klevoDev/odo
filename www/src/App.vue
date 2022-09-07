@@ -1,6 +1,7 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import { provide } from 'vue'
+import SubscriptionCard from '@/components/SubscriptionCard.vue'
 import ContactsCard from '@/components/ContactsCard.vue'
 
 export default {
@@ -9,6 +10,7 @@ export default {
     provide('dev', true)
   },
   components: {
+    SubscriptionCard,
     ContactsCard
   },
   data () {
@@ -68,6 +70,7 @@ export default {
         </div>
       </div>
     </div>
+    <SubscriptionCard v-if="subscriptionOpened" />
   </header>
   <main class="page">
     <RouterView />

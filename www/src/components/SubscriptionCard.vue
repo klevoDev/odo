@@ -1,10 +1,20 @@
+<script>
+export default {
+  methods: {
+    close: () => {
+      window.location.href = '/' // fast trick
+    }
+  }
+}
+</script>
+
 <template>
   <section class="page__subscribe-pop subscribe-pop">
-    <div class="container">
+    <div class="container" @click="close">
       <div class="subscribe-pop__column">
         <div class="subscribe-pop__item">
           <div class="subscribe-pop__wrap-pop-img">
-            <img class="subscribe-pop__pop-img" src="./img/subscribe-pop.png" alt="A person writes a message.">
+            <img class="subscribe-pop__pop-img" src="./../img/subscribe-pop.png" alt="A person writes a message.">
           </div>
           <div class="subscribe-pop__body">
             <h3 class="subscribe-pop__title">
@@ -69,7 +79,7 @@
                 </a>
               </div>
               <div class="subscribe-pop__close-button">
-                Закрыть
+                <a href="#" @click="close">Закрыть</a>
               </div>
             </div>
           </div>
@@ -78,3 +88,153 @@
     </div>
   </section>
 </template>
+
+<style>
+.subscribe-pop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.subscribe-pop__column {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.subscribe-pop__item {
+  background-color: #fff;
+  border-radius: 28px;
+}
+
+.subscribe-pop__pop-img {
+  border-radius: 28px 28px 0 0;
+  /*width: 100%;
+  height: 100%;*/
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.subscribe-pop__body {
+  padding: 24px 24px 40px 24px;
+}
+
+.subscribe-pop__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  color: #151f2d;
+  margin-bottom: 8px;
+}
+
+.subscribe-pop__text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6e85ab;
+  margin-bottom: 32px;
+}
+
+.subscribe-pop__topic {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #151f2d;
+  margin-bottom: 8px;
+}
+
+.subscribe-pop__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #38b5cf;
+  margin-bottom: 24px;
+}
+
+.subscribe-pop__point {
+  padding: 5px 13.5px;
+  border: 1px solid #38b5cf;
+  border-radius: 87.7854px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease 0s;
+}
+
+.subscribe-pop__point:hover {
+  background-color: #c2edf7;
+}
+
+.subscribe-pop__wrap-input {
+  max-width: 400px;
+  height: 48px;
+  margin-bottom: 32px;
+}
+
+.subscribe-pop__input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(26, 38, 55, 0.15);
+  border-radius: 16px;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 143%;
+  color: #151f2d;
+  outline: none;
+}
+
+.subscribe-pop__wrap-buttons {
+  display: flex;
+}
+
+.subscribe-pop__link {
+  padding: 12px 20px;
+  border: 1px solid #151f2d;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
+  color: #151f2d;
+}
+
+.subscribe-pop__close-button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
+  margin-left: 20px;
+  color: #6e85ab;
+}
+
+@media (max-width: 424px) {
+  .subscribe-pop__body {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .subscribe-pop__text {
+    font-size: 12px;
+  }
+
+  .subscribe-pop__wrap-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subscribe-pop__write-telegram {
+    margin-bottom: 40px;
+  }
+
+  .subscribe-pop__close-button {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+}
+
+</style>
