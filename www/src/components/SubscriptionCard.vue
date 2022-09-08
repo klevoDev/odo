@@ -32,15 +32,17 @@ export default {
           toastr.success('Вы успешно подписаны!')
         })
     },
-    close: function () {
+    close: function (event) {
+      // if (!['INPUT', 'BUTTON'].includes(event.target.tagName)) {
       this.$parent.openSubscription(false)
+      // }
     }
   }
 }
 </script>
 
 <template>
-  <section class="page__subscribe-pop subscribe-pop">
+  <section class="page__subscribe-pop subscribe-pop" @click.self="close">
     <div class="container">
       <div class="subscribe-pop__column">
         <div class="subscribe-pop__item">
@@ -128,25 +130,30 @@ export default {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 .subscribe-pop__column {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-top: 5%;
-  margin-left: 5%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 500px;
+  margin-top: -400px;
+  width: 500px;
+  margin-left: -250px;
 }
 
 .subscribe-pop__item {
   background-color: #fff;
   border-radius: 28px;
+  max-width: 500px;
 }
 
 .subscribe-pop__pop-img {
   border-radius: 28px 28px 0 0;
-  /*width: 100%;
-  height: 100%;*/
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
   -o-object-fit: cover;
   object-fit: cover;
 }

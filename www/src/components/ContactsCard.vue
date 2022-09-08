@@ -51,17 +51,19 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  width:  100%;
+  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .contact-pop__column {
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-top: 10%;
-    margin-left: 30%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 580px;
+  margin-top: -290px;
+  width: 500px;
+  margin-left: -250px;
 }
 
 .contact-pop__item {
