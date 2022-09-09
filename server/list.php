@@ -1,4 +1,13 @@
-﻿<?php
+﻿<table border="1">
+<thead>
+	<th>№</th>
+	<th>E-mail</th>
+	<th>Статус</th>
+	<th>Начало подписки</th>
+	<th>Окончание подписки</th>
+	<th>Направления</th>
+</thead>
+<?php
   include_once 'config.php';
 
   $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
@@ -10,14 +19,14 @@
 
   echo '<h1>Подписчики</h1>';
   $res = $mysqli->query('SELECT * FROM `' . $tableName . '`');
-  echo '<table border="1">';
   while ($row = $res->fetch_row()) {
-    echo '<tr>' . '<td>' . $row[0] . '</td><td>' . $row[1] . '</td><td>' . $row[2] .
-      '</td><td>' . $row[3] . '</td></tr>'; 
+	echo "<tr><td>";
+	echo implode('</td><td>', $row);
+	echo "</td></tr>";
   }
-  echo '</table>';
 
   $mysqli->close();
   // header('Content-Type: application/json; charset=utf-8');
   // echo json_encode($result);
 ?>
+</table>
