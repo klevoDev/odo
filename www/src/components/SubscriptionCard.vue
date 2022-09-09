@@ -3,6 +3,12 @@ import { inject } from 'vue'
 import axios from 'axios'
 import toastr from 'toastr'
 
+const isValidEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  )
+}
+
 let apiBase
 export default {
   setup () {
@@ -46,6 +52,10 @@ export default {
         toastr.warning('Введите email!')
         return
       }
+      if (!isValidEmail(email)) {
+        toastr.warning('Введите корректный email!')
+        return
+      }
       const formData = new FormData()
       formData.append('email', this.email)
       Object.keys(this.topicsSelected).forEach(t => {
@@ -59,6 +69,7 @@ export default {
       })
         .then(resp => {
           toastr.success('Вы успешно подписаны!')
+          this.close()
         })
     },
     close: function (event) {
