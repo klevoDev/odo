@@ -10,11 +10,37 @@ export default {
   },
   data () {
     return {
+      topics: [
+        'Frontend-разработчик',
+        'Python-разработчик',
+        'Java-разработчик',
+        'Тестировщик ПО',
+        'Android-разработчик',
+        'iOS-разработчик',
+        'Frontend',
+        'Backend',
+        'Android',
+        'iOS',
+        'ML',
+        'QA'
+      ],
+      topicsSelected: {},
       email: ''
     }
   },
   methods: {
+    toggleTopic: function (topic) {
+      if (!this.topicsSelected[topic]) {
+        this.topicsSelected[topic] = true
+      } else {
+        delete this.topicsSelected[topic]
+      }
+    },
     subscribe: function () {
+      if (!Object.keys(this.topicsSelected).length) {
+        toastr.warning('Выберите хотя бы одно направление!')
+        return
+      }
       const email = this.email
       if (!email) {
         toastr.warning('Введите email!')
@@ -22,6 +48,9 @@ export default {
       }
       const formData = new FormData()
       formData.append('email', this.email)
+      Object.keys(this.topicsSelected).forEach(t => {
+        formData.append('topic[]', t)
+      })
       axios({
         method: 'post',
         url: `${apiBase}subscribe.php`,
@@ -57,44 +86,11 @@ export default {
               Пришлем уведомление на почту о новом оффере :)
             </p>
             <p class="subscribe-pop__topic">
-              Каккие события интересуют?
+              Какие события интересуют?
             </p>
             <ul class="subscribe-pop__list">
-              <li class="subscribe-pop__point">
-                Frontend-разработчик
-              </li>
-              <li class="subscribe-pop__point">
-                Python-разработчик
-              </li>
-              <li class="subscribe-pop__point">
-                Java-разработчик
-              </li>
-              <li class="subscribe-pop__point">
-                Тестировщик ПО
-              </li>
-              <li class="subscribe-pop__point">
-                Android-разработчик
-              </li>
-              <li class="subscribe-pop__point">
-                iOS-разработчик
-              </li>
-              <li class="subscribe-pop__point">
-                Frontend
-              </li>
-              <li class="subscribe-pop__point">
-                Backend
-              </li>
-              <li class="subscribe-pop__point">
-                Android
-              </li>
-              <li class="subscribe-pop__point">
-                iOS
-              </li>
-              <li class="subscribe-pop__point">
-                ML
-              </li>
-              <li class="subscribe-pop__point">
-                QA
+              <li class="subscribe-pop__point" v-for="t in topics" :class="{ selected: topicsSelected[t] }">
+                <span @click.self="toggleTopic(t)">{{t}}</span>
               </li>
             </ul>
             <p class="subscribe-pop__topic">
@@ -204,9 +200,10 @@ export default {
   margin-left: 4px;
   margin-bottom: 4px;
   transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-.subscribe-pop__point:hover {
+.subscribe-pop__point:hover, .subscribe-pop__point.selected {
   background-color: #c2edf7;
 }
 

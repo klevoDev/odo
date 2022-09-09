@@ -1,7 +1,7 @@
 ﻿<?php
   include_once 'config.php';
 
-  if ($_POST['email']) {
+  if ($_POST['email'] && $_POST['topic']) {
     $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
     if($mysqli->connect_errno) {
@@ -13,8 +13,8 @@
     $res = $mysqli->query('SELECT COUNT(*) FROM `' . $tableName . '` WHERE `email` = \'' . $email . '\'');
     $row = $res->fetch_row();
     if ($row[0] == 0) {
-      $insQuery = "INSERT INTO `" . $tableName . "` (`email`, `status`)" .
-        " VALUES ('" . $_POST['email'] . "', 'active')";
+      $insQuery = "INSERT INTO `" . $tableName . "` (`email`, `status`, `topics`)" .
+        " VALUES ('" . $_POST['email'] . "', 'active', '" . implode(';', $_POST['topic']) . "')";
 
       if ($mysqli->query($insQuery)) {
         $id = $mysqli->insert_id;
