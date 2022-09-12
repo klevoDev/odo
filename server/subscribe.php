@@ -9,12 +9,14 @@
       exit();
     }
 
+    $position = isset($_POST['position']) ? $_POST['position'] : 'unknown';
     $email = trim($_POST['email']);
     $res = $mysqli->query('SELECT COUNT(*) FROM `' . $tableName . '` WHERE `email` = \'' . $email . '\'');
     $row = $res->fetch_row();
     if ($row[0] == 0) {
-      $insQuery = "INSERT INTO `" . $tableName . "` (`email`, `status`, `topics`)" .
-        " VALUES ('" . $_POST['email'] . "', 'active', '" . implode(';', $_POST['topic']) . "')";
+      $insQuery = "INSERT INTO `" . $tableName . "` (`email`, `status`, `topics`, `ip_address`, `user_agent`, `position`)" .
+        " VALUES ('" . $_POST['email'] . "', 'active', '" . implode(';', $_POST['topic']) . "', '" .
+          $_SERVER['REMOTE_ADDR'] . "', '" . $_SERVER['HTTP_USER_AGENT'] . "', '" . $position . "')";
 
       if ($mysqli->query($insQuery)) {
         $id = $mysqli->insert_id;
