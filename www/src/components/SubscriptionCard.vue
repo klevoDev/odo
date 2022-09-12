@@ -58,6 +58,7 @@ export default {
       }
       const formData = new FormData()
       formData.append('email', this.email)
+      formData.append('position', this.$parent.positionLast)
       Object.keys(this.topicsSelected).forEach(t => {
         formData.append('topic[]', t)
       })
@@ -74,7 +75,7 @@ export default {
     },
     close: function (event) {
       // if (!['INPUT', 'BUTTON'].includes(event.target.tagName)) {
-      this.$parent.openSubscription(false)
+      this.$parent.openSubscription('unknown', false)
       // }
     }
   }

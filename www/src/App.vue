@@ -6,7 +6,7 @@ import ContactsCard from '@/components/ContactsCard.vue'
 
 export default {
   setup () {
-    provide('apiBase', 'https://onedayoffer.ru/api/')
+    provide('apiBase', 'https://onedayoffer.ru/api/test/')
     provide('dev', true)
   },
   components: {
@@ -16,11 +16,13 @@ export default {
   data () {
     return {
       subscriptionOpened: false,
-      contactsOpened: false
+      contactsOpened: false,
+      positionLast: 'unknown'
     }
   },
   methods: {
-    openSubscription: function (state = true) {
+    openSubscription: function (position, state = true) {
+      this.positionLast = position
       this.subscriptionOpened = state
     },
     openContacts: function (state = true) {
@@ -60,7 +62,7 @@ export default {
             </a>
           </li>
           <li class="header__item">
-            <a class="header__subscribe subscribe" href="#" @click="openSubscription">
+            <a class="header__subscribe subscribe" href="#" @click="openSubscription('top')">
               Подписаться на события
             </a>
           </li>
@@ -108,7 +110,7 @@ export default {
             </a>
           </div>
           <div class="footer__wrap-subscribe">
-            <a class="footer__subscribe subscribe" href="#" @click="openSubscription">
+            <a class="footer__subscribe subscribe" href="#" @click="openSubscription('bottom')">
               Подписаться на события
             </a>
           </div>

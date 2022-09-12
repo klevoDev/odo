@@ -67,8 +67,8 @@ export default {
     closeOffer: function () {
       this.offer = null
     },
-    openSubscription: function (state) {
-      this.$parent.$parent.openSubscription(state)
+    openSubscription: function (position, state) {
+      this.$parent.$parent.openSubscription(position, state)
     },
     prevCompletedMonths: () => {
       alert('Листаем влево')
@@ -95,7 +95,7 @@ export default {
             Все вакансии быстрого найма от лучших компаний страны
           </p>
           <div class="start__wrap-subscribe">
-            <a class="start__subscribe subscribe" href="#" @click="openSubscription">
+            <a class="start__subscribe subscribe" href="#" @click="openSubscription('middle')">
               Подписаться на события
             </a>
           </div>
