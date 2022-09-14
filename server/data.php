@@ -35,6 +35,13 @@
       'logo' => './img/tinkoff.png',
       'logoAlt' => 'Тинькофф'
     ],
+    [
+      'id' => 'Ozon1',
+      'name' => 'OZON',
+      'sub' => '',
+      'logo' => './img/ozon.png',
+      'logoAlt' => 'OZON'
+    ],
   ];
 
   $sber1 = $companies[0];
@@ -42,20 +49,21 @@
   $yandex2 = $companies[2];
   $vk1 = $companies[3]; // array_filter($companies, function ($c) { return $c['id'] === 'VK1'; })[0];
   $tinkoff1 = $companies[4];
+  $ozon1 = $companies[5];
 
   $cards = [
-    [
-      'id' => 1,
-      'name' => 'Java-разработчик',
-      'description' => '',
-      'company' => $vk1,
-      'stack' => ['Java'],
-      'status' => 'active',
-      'eventDt' => '10 и 11 сентября',
-      'eventDt2' => 'weekend offer',
-      'eventInfo' => 'Заявки принимаются до 9.09.2022',
-      'link' => 'https://team.vk.company/vacancy/27215/'
-    ],
+    // [
+    //   'id' => 1,
+    //   'name' => 'Java-разработчик',
+    //   'description' => '',
+    //   'company' => $vk1,
+    //   'stack' => ['Java'],
+    //   'status' => 'active',
+    //   'eventDt' => '10 и 11 сентября',
+    //   'eventDt2' => 'weekend offer',
+    //   'eventInfo' => 'Заявки принимаются до 9.09.2022',
+    //   'link' => 'https://team.vk.company/vacancy/27215/'
+    // ],
     [
       'id' => 2,
       'name' => 'Frontend',
@@ -68,16 +76,27 @@
       'eventInfo' => 'Заявки принимаются до 20.09.2022',
       'link' => 'https://yandex.ru/jobs/hiring-events?ysclid=l5i3xud1wf755747148'
     ],
+    // [
+    //   'id' => 3,
+    //   'name' => 'QA-инженеры',
+    //   'company' => $tinkoff1,
+    //   'stack' => ['Опыт от 2 лет'],
+    //   'status' => 'active',
+    //   'eventDt' => '17 сентября, суббота',
+    //   'eventDt2' => 'с 10:00 до 20:00 по мск онлайн',
+    //   'eventInfo' => 'Заявки принимаются до 15.09.2022',
+    //   'link' => 'https://one-day-offer.tinkoff.ru/qa/?internal_source=main_1do'
+    // ],
     [
-      'id' => 3,
-      'name' => 'QA-инженеры',
-      'company' => $tinkoff1,
-      'stack' => ['Опыт от 2 лет'],
+      'id' => 4,
+      'name' => 'C#-разработчик',
+      'company' => $ozon1,
+      'stack' => ['Опыт от 2-х лет'],
       'status' => 'active',
       'eventDt' => '17 сентября, суббота',
-      'eventDt2' => 'с 10:00 до 20:00 по мск онлайн',
-      'eventInfo' => 'Заявки принимаются до 15.09.2022',
-      'link' => 'https://one-day-offer.tinkoff.ru/qa/?internal_source=main_1do'
+      'eventDt2' => 'В московском офисе Ozon Tech или онлайн',
+      'eventInfo' => '',
+      'link' => 'https://tech.ozon.ru/doyouspeakcode?utm_source=Telegram&utm_medium=social&utm_campaign=C%23_Hiring_Event_tg_07_09'
     ],
     [
       'id' => 111,
