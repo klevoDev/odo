@@ -1,12 +1,18 @@
 <?php
   include_once 'data.php';
 
-  $completedCards = array_filter($cards, function ($c) { return $c['status'] === 'completed'; });
+  // include_once 'db-utils.php';
+
+  // $cols = ['name', 'sub', 'logo', 'logoAlt'];
+  // $items = getDataByLeftJoin('odo_cards', 'odo_companies', 'companyId', 'id', $cols);
+
+  // $completedCards = array_filter($items, function ($c) { return $c['status'] === 'completed'; });
 
   $completedMonths = [
-    [ 'name' => 'Август', 'link' => '#' ],
-    [ 'name' => 'Сентябрь', 'link' => '#' ],
-    [ 'name' => 'Октябрь', 'link' => '#' ]
+    [ 'name' => 'Июль', 'monthIso' => '2022-07', 'link' => '#' ],
+    [ 'name' => 'Август', 'monthIso' => '2022-08', 'link' => '#' ],
+    [ 'name' => 'Сентябрь', 'monthIso' => '2022-09', 'link' => '#' ]
+    // [ 'name' => 'Октябрь', 'monthIso' => '2022-10', 'link' => '#' ]
   ];
 
   $completedYears = [
@@ -16,8 +22,8 @@
   $result = [
     'success' => true,
     'data' => [
-      'completed' => 8, // count($completedCards),
-      'fastHireCompanies' => 5,
+      'completed' => 2, // count($completedCards),
+      'fastHireCompanies' => 2,
       'oftenHiredCompanies' => [$sber1, $yandex1, $vk1],
       'completedMonths' => $completedMonths,
       'completedYears' => $completedYears

@@ -15,8 +15,28 @@ const setLocalImgs = c => {
   return c
 }
 
+let curMonth = (new Date()).toISOString().substr(0, 7)
+const maxMonth = curMonth
+
+const incMonth = isoDt => {
+  const dt = new Date(isoDt)
+  dt.setMonth(dt.getMonth() + 1)
+  const res = dt.toISOString().substr(0, 7)
+  if (res > maxMonth) {
+    return isoDt
+  }
+  return res
+}
+
+const decMonth = isoDt => {
+  const dt = new Date(isoDt)
+  dt.setMonth(dt.getMonth() - 1)
+  return dt.toISOString().substr(0, 7)
+}
+
 let apiBase
 let dev
+let cardsAll = []
 export default {
   setup () {
     apiBase = inject('apiBase')
@@ -30,7 +50,8 @@ export default {
       offer: null,
       cards: [],
       completed: [],
-      stats: {}
+      stats: {},
+      curMonth: curMonth
     }
   },
   beforeMount () {
@@ -49,13 +70,13 @@ export default {
       ])
         .then(resp => {
           // toastr.success('Карточки успешно получены')
-          let cardsAll = resp[0].data.data
+          cardsAll = resp[0].data.data
           if (dev) {
             cardsAll = cardsAll.map(setLocalImgs)
             resp[1].data.data.oftenHiredCompanies = resp[1].data.data.oftenHiredCompanies.map(setLocalImgs)
           }
           self.cards = cardsAll.filter(c => c.status === 'active')
-          self.completed = cardsAll.filter(c => c.status === 'completed')
+          self.completed = cardsAll.filter(c => c.status === 'completed' && c.completedDt && c.completedDt.substr(0, 7) === '2022-09')
           self.stats = resp[1].data.data
           console.log('loaded data')
         })
@@ -70,11 +91,32 @@ export default {
     openSubscription: function (position, state) {
       this.$parent.$parent.openSubscription(position, state)
     },
-    prevCompletedMonths: () => {
-      alert('Листаем влево')
+    getMonthName: function (isoDt) {
+      const num = parseInt(isoDt.substr(6, 2), 10)
+      const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+      return months[num - 1]
     },
-    nextCompletedMonths: () => {
-      alert('Листаем вправо')
+    updateCompletedCards: function () {
+      console.log(this.curMonth)
+      this.completed = cardsAll.filter(c => c.status === 'completed' && c.completedDt && c.completedDt.substr(0, 7) === this.curMonth)
+      this.stats.completed = this.completed.length
+      const unique = {}
+      this.completed.forEach(c => {
+        unique[c.company.name] = true
+      })
+      this.stats.fastHireCompanies = Object.keys(unique).length
+    },
+    showCompletedByMonth: function (monthIso) {
+      this.curMonth = monthIso
+      this.updateCompletedCards()
+    },
+    prevCompletedMonths: function () {
+      this.curMonth = decMonth(this.curMonth)
+      this.updateCompletedCards()
+    },
+    nextCompletedMonths: function () {
+      this.curMonth = incMonth(this.curMonth)
+      this.updateCompletedCards()
     }
   }
 }
@@ -169,7 +211,7 @@ export default {
   <section class="page__statistics statistics" v-if="!offer">
     <div class="container">
       <h2 class="statistics__subheading">
-        Статистика августа
+        Статистика <span>{{getMonthName(curMonth)}}</span>
       </h2>
       <div class="statistics__row">
         <div class="statistics__column">
@@ -210,7 +252,7 @@ export default {
             <a class="completed__left _icon-data-left" @click="prevCompletedMonths"></a>
           </li>
           <li v-for="m in stats.completedMonths" class="completed__wrap-month">
-            <a class="completed__month" :href="m.link">
+            <a class="completed__month" @click="showCompletedByMonth(m.monthIso)" style="cursor: pointer;">
               {{m.name}}
             </a>
           </li>
