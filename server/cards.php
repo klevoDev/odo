@@ -1,19 +1,15 @@
 ﻿<?php
   include_once 'db-utils.php';
 
-  $items = getDataByLeftJoin('odo_cards', 'odo_companies', 'companyId', 'id', ['name', 'sub', 'logo', 'logoAlt']);
+  $cols = ['name', 'sub', 'logo', 'logoAlt'];
+  $items = getDataByLeftJoin('odo_cards', 'odo_companies', 'companyId', 'id', $cols);
   foreach ($items as &$item) {
     $item['stack'] = explode(';', $item['stack']);
-    $item['company'] = [
-      'name' => $item['t2.name'],
-      'sub' => $item['t2.sub'],
-      'logo' => $item['t2.logo'],
-      'logoAlt' => $item['t2.logoAlt']
-    ];
-    unset($item['t2.name']);
-    unset($item['t2.sub']);
-    unset($item['t2.logo']);
-    unset($item['t2.logoAlt']);
+    $item['company'] = [];
+    foreach ($cols as $c) {
+      $item['company'][$c] = $item['t2.' . $c];
+      unset($item['t2.' . $c]);
+    }
   }
 
   $result = [
