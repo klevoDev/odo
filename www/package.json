@@ -4,7 +4,7 @@
   "description": "One Day Offer Application",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/test/",
     "preview": "vite preview --port 4173"
   },
   "repository": {

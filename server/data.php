@@ -108,8 +108,8 @@
       'eventDt' => '10 и 11 сентября',
       'eventDt2' => 'weekend offer',
       'eventInfo' => 'Заявки принимаются до 9.09.2022',
-      'link' => 'https://team.vk.company/vacancy/27215/'
-    ],
+      'link' => 'https://team.vk.company/vacancy/27215/
+'    ],
     [
       'id' => 5,
       'name' => 'Frontend Mobile 02',

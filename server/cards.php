@@ -1,29 +1,24 @@
 ﻿<?php
-  include_once 'config.php';
-  // include_once 'data.php';
+  include_once 'db-utils.php';
 
-  $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-  $mysqli->set_charset('utf8');
-
-  if($mysqli->connect_errno) {
-    printf("Connect failed: %s<br />", $mysqli->connect_error);
-    exit();
+  $items = getDataByLeftJoin('odo_cards', 'odo_companies', 'companyId', 'id', ['name', 'sub', 'logo', 'logoAlt']);
+  foreach ($items as &$item) {
+    $item['stack'] = explode(';', $item['stack']);
+    $item['company'] = [
+      'name' => $item['t2.name'],
+      'sub' => $item['t2.sub'],
+      'logo' => $item['t2.logo'],
+      'logoAlt' => $item['t2.logoAlt']
+    ];
+    unset($item['t2.name']);
+    unset($item['t2.sub']);
+    unset($item['t2.logo']);
+    unset($item['t2.logoAlt']);
   }
-
-  $cards = [];
-  $tableName = 'odo_cards';
-  $res = $mysqli->query('SELECT * FROM `' . $tableName . '`');
-  while ($row = $res->fetch_assoc()) {
-    $row['stack'] = explode(';', $row['stack']);
-    $cards[] = $row;
-  }
-
-  $res->free_result();
-  $mysqli->close();
 
   $result = [
     'success' => true,
-    'data' => $cards,
+    'data' => $items,
     'message' => 'OK'
   ];
 

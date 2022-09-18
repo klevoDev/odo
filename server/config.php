@@ -3,5 +3,4 @@
   $dbuser = 'root';
   $dbpass = '';
   $dbname = 'odo';
-  $tableName = 'subscriptions';
 ?>
