@@ -17,6 +17,7 @@ const setLocalImgs = c => {
 
 const now = new Date()
 const maxMonth = now.toISOString().substr(0, 7)
+const minMonth = '2022-07'
 now.setMonth(now.getMonth() - 1)
 const curMonth = now.toISOString().substr(0, 7)
 
@@ -33,7 +34,11 @@ const incMonth = isoDt => {
 const decMonth = isoDt => {
   const dt = new Date(isoDt)
   dt.setMonth(dt.getMonth() - 1)
-  return dt.toISOString().substr(0, 7)
+  const res = dt.toISOString().substr(0, 7)
+  if (res < minMonth) {
+    return isoDt
+  }
+  return res
 }
 
 let apiBase
@@ -54,7 +59,8 @@ export default {
       completed: [],
       stats: {},
       curMonth: curMonth,
-      maxMonth: maxMonth
+      maxMonth: maxMonth,
+      minMonth: minMonth
     }
   },
   beforeMount () {
@@ -76,10 +82,14 @@ export default {
           cardsAll = resp[0].data.data
           if (dev) {
             cardsAll = cardsAll.map(setLocalImgs)
-            resp[1].data.data.oftenHiredCompanies = resp[1].data.data.oftenHiredCompanies.map(setLocalImgs)
           }
           self.cards = cardsAll.filter(c => c.status === 'active')
           self.completed = cardsAll.filter(c => c.status === 'completed' && c.completedDt && c.completedDt.substr(0, 7) === curMonth)
+          const oftenHiredCompanies = self.completed.map(item => item.company)
+          // if (dev) {
+          //   oftenHiredCompanies = oftenHiredCompanies.map(setLocalImgs)
+          // }
+          resp[1].data.data.oftenHiredCompanies = oftenHiredCompanies
           self.stats = resp[1].data.data
           console.log('loaded data')
         })
@@ -108,6 +118,7 @@ export default {
         unique[c.company.name] = true
       })
       this.stats.fastHireCompanies = Object.keys(unique).length
+      this.stats.oftenHiredCompanies = this.completed.map(item => item.company)
     },
     showCompletedByMonth: function (monthIso) {
       this.curMonth = monthIso
@@ -233,7 +244,8 @@ export default {
           <div class="statistics__wrap-top">
             <ul class="statistics__list">
               <li v-for="c in stats.oftenHiredCompanies" class="statistics__company-item">
-                <img class="statistics__company" :src="c.logo" :alt="c.logoAlt"><span class="statistics__span">{{c.name}}</span>
+                <img class="statistics__company" :src="c.logo" :alt="c.logoAlt">
+                <span class="statistics__span">{{c.name}}</span>
               </li>
             </ul>
             <p class="statistics__text-top">
@@ -251,7 +263,7 @@ export default {
           Уже завершены
         </h2>
         <ul class="completed__list-data">
-          <li class="completed__left-button">
+          <li class="completed__left-button" v-show="curMonth !== minMonth">
             <a class="completed__left _icon-data-left" @click="prevCompletedMonths" style="cursor: pointer;"></a>
           </li>
           <li v-for="m in stats.completedMonths" class="completed__wrap-month">
@@ -259,8 +271,8 @@ export default {
               {{m.name}}
             </a>
           </li>
-          <li class="completed__rigth-button">
-            <a class="completed__rigth _icon-data-right" v-show="curMonth !== maxMonth" @click="nextCompletedMonths" style="cursor: pointer;"></a>
+          <li class="completed__rigth-button" v-show="curMonth !== maxMonth">
+            <a class="completed__rigth _icon-data-right" @click="nextCompletedMonths" style="cursor: pointer;"></a>
           </li>
           <li v-for="y in stats.completedYears" class="completed__year">
             {{y.name}}
