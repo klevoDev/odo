@@ -930,6 +930,10 @@ body {
   color: #6e85ab;
 }
 
+.router-link-active {
+  color: #151f2d !important;
+}
+
 @media (max-width: 1023px) {
   .completed__column {
     flex: 0 1 50%;

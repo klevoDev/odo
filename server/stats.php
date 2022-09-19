@@ -22,8 +22,8 @@
   $result = [
     'success' => true,
     'data' => [
-      'completed' => 2, // count($completedCards),
-      'fastHireCompanies' => 2,
+      'completed' => 1, // count($completedCards),
+      'fastHireCompanies' => 1,
       'oftenHiredCompanies' => [$sber1, $yandex1, $vk1],
       'completedMonths' => $completedMonths,
       'completedYears' => $completedYears
