@@ -11,7 +11,7 @@
     }
 
     &__item {
-        padding: 32px;
+        padding: 24px;
         background: #fff;
         border-radius: 24px;
         transition: all 0.3s ease 0s;
@@ -31,20 +31,24 @@
 
     &__stack {
         display: flex;
-
-        font-size: 14px;
-        line-height: 143%;
-
-        color: #38b5cf;
+        flex-wrap: wrap;
+        margin: -4px;
 
         margin-bottom: 24px;
     }
 
     &__point {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 143%;
+
+        color: $colorBlue;
+
         padding: 5px 13.5px;
         border: 1px solid #38b5cf;
         border-radius: 87.7854px;
-        margin-left: 4px;
+
+        margin: 2px;
 
         &:nth-child(1) {
             margin-left: 0;
@@ -52,94 +56,67 @@
     }
 
     &__data-list {
-        font-size: 16px;
-        line-height: 150%;
-
-        color: $colorGarkBlue;
-
+        flex: 1 1 auto;
         margin-bottom: 24px;
     }
 
     &__data-point {
-        margin-bottom: 4px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
 
-        &:last-child {
-            font-size: 14px;
-            line-height: 143%;
-
-            color: #6e85ab;
-
-            margin-bottom: 0;
-        }
+        color: $colorGarkBlue;
     }
 
-    &__wrap-company-info {
+    &__data-info {
+        font-size: 14px;
+        line-height: 143%;
+
+        color: $colorGrey;
+    }
+
+    &__wrap-company {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    &__about-company {
-        position: relative;
+    &__name-company {
+    }
 
-        padding-left: 52px;
+    &__span-name {
+        display: inline-block;
+        margin-top: 12px;
+        margin-left: 12px;
+    }
 
-        font-size: 20px;
-        line-height: 150%;
-
-        color: $colorGarkBlue;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: 0;
-
-            width: 40px;
-            height: 40px;
-            background: url("./../img/vk.png") 0 0 / contain no-repeat;
-        }
+    &__company-logo {
     }
 
     &__wrap-button {
     }
 
     &__button {
-        padding: 10px 16px;
-
-        border: 1px solid $colorGarkBlue;
-        border-radius: 16px;
-
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 143%;
-
-        color: $colorGarkBlue;
     }
 
     &__item-shadow {
-        padding: 32px 0 0 0;
+        padding: 24px 0 0 0;
         background: rgba(255, 255, 255, 0.3);
         border-radius: 24px;
-
-        &:hover {
-            box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
-        }
     }
 
     &__title-shadow {
-        text-align: center;
-        margin: 0 auto;
         font-weight: 700;
         font-size: 28px;
-        line-height: 125%;
-        width: 281px;
+        line-height: 121%;
 
+        margin: 0 auto;
         text-align: center;
+        max-width: 239px;
 
         color: rgba(110, 133, 171, 0.5);
 
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 
     &__wrap-img-load {
@@ -151,37 +128,50 @@
 
     &__wrap-cartoon {
         text-align: right;
+        margin-top: -30px;
     }
 
     &__cartoon {
     }
 }
 
-@media (max-width: 1335px) {
+@media (max-width: 1023px) {
     .tickets {
         &__row {
             justify-content: center;
-            margin: -16px;
         }
 
-        &__company-info {
-            display: inline-block;
+        &__column {
+            flex: 0 1 45%;
         }
 
-        &__about-company {
-            margin-left: 0;
-        }
-
-        &__button {
-            margin-top: 50px;
+        &__item-shadow {
+            display: none;
         }
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
     .tickets {
         &__column {
-            flex: 0 1 50%;
+            flex: 0 1 80%;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .tickets {
+        &__column {
+            flex: 0 1 100%;
+        }
+
+        &__wrap-company {
+            flex-direction: column;
+        }
+
+        &__name-company {
+            margin-right: auto;
+            margin-bottom: 50px;
         }
     }
 }

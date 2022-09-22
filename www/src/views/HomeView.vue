@@ -45,14 +45,14 @@ let apiBase
 let dev
 let cardsAll = []
 export default {
-  setup () {
+  setup() {
     apiBase = inject('apiBase')
     dev = inject('dev')
   },
   components: {
     OfferCardDetail
   },
-  data () {
+  data() {
     return {
       offer: null,
       cards: [],
@@ -63,11 +63,11 @@ export default {
       minMonth: minMonth
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.loadData()
     // console.log('before mount')
   },
-  mounted () {
+  mounted() {
     // console.log('mounted')
   },
   methods: {
@@ -141,7 +141,7 @@ export default {
     <div class="container">
       <div class="start__row">
         <div class="start__body">
-          <h2 class="start__subheading subheading">
+          <h2 class="start__label subheading">
             найди свой
           </h2>
           <h1 class="start__heading">
@@ -192,13 +192,15 @@ export default {
               </li>
             </ul>
             <!-- лого компаниии и кнопка -->
-            <div class="tickets__wrap-company-info">
-              <div class="tickets__about-company">
-                <!-- <img :src="c.company.logo" alt="c.company.logoAlt" > -->
-                {{c.company.name}}
+            <div class="tickets__wrap-company">
+              <div class="tickets__name-company">
+                <img class="tickets__company-logo" src="./../img/yan.png" alt="">
+                <span class="tickets__span-name">
+                  {{c.company.name}}
+                </span>
               </div>
               <div class="tickets__wrap-button">
-                <a class="tickets__button" :href="c.link" target="_blank">
+                <a class="tickets__button button" :href="c.link" target="_blank">
                   Участвовать
                 </a>
               </div>
@@ -320,7 +322,7 @@ export default {
 </template>
 
 <style>
-  .completed__month__active {
-    color: #151f2d !important;
-  }
+.completed__month__active {
+  color: #151f2d !important;
+}
 </style>

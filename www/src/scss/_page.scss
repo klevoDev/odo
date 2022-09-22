@@ -1,11 +1,12 @@
 .page {
+    flex: 1 1 auto;
+
     &__start {
-        flex: 1 1 auto;
-        margin-bottom: 48px;
+        margin-bottom: 47px;
     }
 
     &__tickets {
-        margin-bottom: 48px;
+        margin-bottom: 56px;
     }
 
     &__statistics {
@@ -13,5 +14,6 @@
     }
 
     &__completed {
+        margin-bottom: 56px;
     }
 }

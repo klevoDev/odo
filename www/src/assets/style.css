@@ -104,9 +104,11 @@ body {
 }
 
 .wrapper {
-  margin: 30px 0;
-  overflow: hidden;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
+  overflow: hidden;
 }
 
 .container {
@@ -134,6 +136,16 @@ body {
 }
 .subscribe:hover {
   box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
+}
+
+.button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
+  color: #151f2d;
+  padding: 10px 16px;
+  border: 1px solid #151f2d;
+  border-radius: 16px;
 }
 
 .subheading {
@@ -171,7 +183,7 @@ body {
 .title {
   font-weight: 700;
   font-size: 28px;
-  line-height: 125%;
+  line-height: 121%;
   color: #151f2d;
 }
 
@@ -269,16 +281,22 @@ body {
     height: 2px;
   }
 }
-.page__start {
+.page {
   flex: 1 1 auto;
-  margin-bottom: 48px;
+}
+.page__start {
+  margin-bottom: 47px;
 }
 .page__tickets {
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 .page__statistics {
   margin-bottom: 56px;
 }
+.page__completed {
+  margin-bottom: 56px;
+}
+
 .start__row {
   display: flex;
 }
@@ -296,11 +314,15 @@ body {
   margin-bottom: 16px;
 }
 .start__text {
-  max-width: 599px;
   font-size: 28px;
   line-height: 143%;
+  max-width: 599px;
   color: #151f2d;
   margin-bottom: 32px;
+}
+.start__subscribe {
+  padding: 16px 24px;
+  border-radius: 20px;
 }
 .start__wrap-picture {
   position: relative;
@@ -309,8 +331,8 @@ body {
 .start__wrap-picture::before {
   content: "";
   position: absolute;
-  top: 50px;
-  left: -400px;
+  top: 70px;
+  left: -350px;
   width: 511px;
   height: 508px;
   background: url("./../img/light.png") 0 0/contain no-repeat;
@@ -543,7 +565,7 @@ body {
   flex: 0 1 33.3334%;
 }
 .tickets__item {
-  padding: 32px;
+  padding: 24px;
   background: #fff;
   border-radius: 24px;
   transition: all 0.3s ease 0s;
@@ -559,108 +581,96 @@ body {
 }
 .tickets__stack {
   display: flex;
-  font-size: 14px;
-  line-height: 143%;
-  color: #38b5cf;
+  flex-wrap: wrap;
+  margin: -4px;
   margin-bottom: 24px;
 }
 .tickets__point {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
+  color: #38b5cf;
   padding: 5px 13.5px;
   border: 1px solid #38b5cf;
   border-radius: 87.7854px;
-  margin-left: 4px;
+  margin: 2px;
 }
 .tickets__point:nth-child(1) {
   margin-left: 0;
 }
 .tickets__data-list {
-  font-size: 16px;
-  line-height: 150%;
-  color: #151f2d;
+  flex: 1 1 auto;
   margin-bottom: 24px;
 }
 .tickets__data-point {
-  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #151f2d;
 }
-.tickets__data-point:last-child {
+.tickets__data-info {
   font-size: 14px;
   line-height: 143%;
   color: #6e85ab;
-  margin-bottom: 0;
 }
-.tickets__wrap-company-info {
+.tickets__wrap-company {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.tickets__about-company {
-  position: relative;
-  padding-left: 52px;
-  font-size: 20px;
-  line-height: 150%;
-  color: #151f2d;
-}
-.tickets__about-company::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  background: url("./../img/vk.png") 0 0/contain no-repeat;
-}
-.tickets__button {
-  padding: 10px 16px;
-  border: 1px solid #151f2d;
-  border-radius: 16px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 143%;
-  color: #151f2d;
+.tickets__span-name {
+  display: inline-block;
+  margin-top: 12px;
+  margin-left: 12px;
 }
 .tickets__item-shadow {
-  padding: 32px 0 0 0;
+  padding: 24px 0 0 0;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 24px;
 }
-.tickets__item-shadow:hover {
-  box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
-}
 .tickets__title-shadow {
-  text-align: center;
-  margin: 0 auto;
   font-weight: 700;
   font-size: 28px;
-  line-height: 125%;
-  width: 281px;
+  line-height: 121%;
+  margin: 0 auto;
   text-align: center;
+  max-width: 239px;
   color: rgba(110, 133, 171, 0.5);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .tickets__wrap-img-load {
   text-align: center;
 }
 .tickets__wrap-cartoon {
   text-align: right;
-}
-@media (max-width: 1335px) {
-  .tickets__row {
-    justify-content: center;
-    margin: -16px;
-  }
-  .tickets__company-info {
-    display: inline-block;
-  }
-  .tickets__about-company {
-    margin-left: 0;
-  }
-  .tickets__button {
-    margin-top: 50px;
-  }
+  margin-top: -30px;
 }
 @media (max-width: 1023px) {
+  .tickets__row {
+    justify-content: center;
+  }
   .tickets__column {
-    flex: 0 1 50%;
+    flex: 0 1 45%;
+  }
+  .tickets__item-shadow {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .tickets__column {
+    flex: 0 1 80%;
+  }
+}
+@media (max-width: 425px) {
+  .tickets__column {
+    flex: 0 1 100%;
+  }
+  .tickets__wrap-company {
+    flex-direction: column;
+  }
+  .tickets__name-company {
+    margin-right: auto;
+    margin-bottom: 50px;
   }
 }
 .statistics__subheading {
