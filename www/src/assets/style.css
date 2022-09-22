@@ -97,7 +97,7 @@ h6 {
 body {
   font-family: "Century Gothic", sans-serif;
   background: #e1e8f4;
-  /*background-image: url("./../img/bg-main.png");
+  /*background-image: url('./../img/bg-main.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: top 0 center;*/
@@ -124,14 +124,13 @@ body {
 }
 
 .subscribe {
-  color: #000;
-  padding: 14px 20px;
-  border-radius: 16px;
-  background-color: #fff;
   font-weight: 700;
   font-size: 14px;
   line-height: 143%;
-  transition: all 0.3s ease 0s;
+  padding: 8px 16px;
+  background: #fff;
+  border-radius: 12px;
+  color: #151f2d;
 }
 .subscribe:hover {
   box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
@@ -149,15 +148,15 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 143%;
-  padding-left: 25px;
+  padding-left: 24px;
   color: #6e85ab;
   transition: all 0.3s ease 0s;
 }
 .telegram::before {
   position: absolute;
-  top: 4px;
+  top: 1px;
   left: 0;
-  font-size: 13px;
+  font-size: 16px;
 }
 .telegram:hover {
   color: #151f2d;
@@ -195,17 +194,19 @@ body {
 }
 .header__row {
   display: flex;
+  align-items: center;
+}
+.header__nav {
+  margin-left: 56px;
 }
 .header__nav-list {
   display: flex;
-  margin-left: 56px;
-  margin-top: 7px;
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
 }
-.header__item {
-  margin-left: 32px;
+.header__item:last-child {
+  margin-left: 40px;
 }
 .header__link {
   color: #6e85ab;
@@ -217,7 +218,9 @@ body {
 .header__subscribe-list {
   display: flex;
   margin-left: auto;
-  margin-top: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
 }
 .header__item {
   margin-left: 24px;
@@ -928,10 +931,6 @@ body {
   font-size: 14px;
   line-height: 143%;
   color: #6e85ab;
-}
-
-.router-link-active {
-  color: #151f2d !important;
 }
 
 @media (max-width: 1023px) {

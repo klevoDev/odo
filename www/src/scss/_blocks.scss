@@ -19,16 +19,14 @@
 }
 
 .subscribe {
-    color: $colorBlack;
-    padding: 14px 20px;
-    border-radius: 16px;
-    background-color: $colorWhite;
-
     font-weight: 700;
     font-size: 14px;
     line-height: 143%;
 
-    transition: all 0.3s ease 0s;
+    padding: 8px 16px;
+    background: $colorWhite;
+    border-radius: 12px;
+    color: $colorGarkBlue;
 
     &:hover {
         box-shadow: 0px 4px 15px rgba(110, 133, 171, 0.15);
@@ -49,17 +47,17 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 143%;
-    padding-left: 25px;
+    padding-left: 24px;
 
-    color: #6e85ab;
+    color: $colorGrey;
 
     transition: all 0.3s ease 0s;
 
     &::before {
         position: absolute;
-        top: 4px;
+        top: 1px;
         left: 0;
-        font-size: 13px;
+        font-size: 16px;
     }
 
     &:hover {

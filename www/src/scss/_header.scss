@@ -3,30 +3,35 @@
 
     &__row {
         display: flex;
+        align-items: center;
     }
 
     &__wrap-logo {
     }
 
+    &__logo {
+    }
+
     &__nav {
+        margin-left: 56px;
     }
 
     &__nav-list {
         display: flex;
-        margin-left: 56px;
-        margin-top: 7px;
-
         font-weight: 700;
         font-size: 16px;
         line-height: 150%;
     }
 
     &__item {
-        margin-left: 32px;
+        &:last-child {
+            margin-left: 40px;
+        }
     }
 
     &__link {
-        color: #6e85ab;
+        color: $colorGrey;
+
         transition: all 0.3s ease 0s;
 
         &:hover {
@@ -37,7 +42,10 @@
     &__subscribe-list {
         display: flex;
         margin-left: auto;
-        margin-top: 10px;
+
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 143%;
     }
 
     &__item {
