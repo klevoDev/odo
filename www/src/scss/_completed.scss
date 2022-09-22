@@ -3,16 +3,32 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        margin-bottom: 24px;
     }
 
     &__subheading {
+        position: relative;
+
         font-weight: 700;
         font-size: 28px;
         line-height: 143%;
 
-        color: rgba(21, 31, 45, 0.96);
+        color: $colorGarkBlue;
+
+        padding-right: 80px;
+
+        &::before {
+            position: absolute;
+            top: 10px;
+            right: 40px;
+            font-size: 22px;
+        }
+
+        &::after {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            font-size: 22px;
+        }
     }
 
     &__list-data {
@@ -24,32 +40,25 @@
 
     &__left {
         position: relative;
-        color: #6e85ab;
-        margin-right: 16px;
 
         &::before {
             position: absolute;
-            top: 5px;
+            top: 4px;
             left: 0;
             font-size: 16px;
         }
     }
 
     &__wrap-month {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 125%;
-
-        margin: 0 16px 0 16px;
     }
 
     &__month {
-        color: #6e85ab;
-        transition: all 0.3s ease 0s;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
 
-        &:hover {
-            color: $colorGarkBlue;
-        }
+        color: $colorGarkBlue;
+        padding: 0 30px;
     }
 
     &__rigth-button {
@@ -57,12 +66,10 @@
 
     &__rigth {
         position: relative;
-        color: #6e85ab;
-        margin-left: 16px;
 
         &::after {
             position: absolute;
-            top: 5px;
+            top: 4px;
             right: 0;
             font-size: 16px;
         }
@@ -71,15 +78,17 @@
     &__year {
         font-weight: 700;
         font-size: 16px;
-        line-height: 143%;
+        line-height: 150%;
 
-        color: #6e85ab;
+        color: $colorGrey;
 
-        margin-left: 32px;
+        margin-left: 20px;
     }
 
     &__row {
         display: flex;
+        flex-wrap: wrap;
+        margin: 0 -16px;
     }
 
     &__column {
@@ -88,9 +97,9 @@
     }
 
     &__item {
-        padding: 32px;
+        padding: 24px;
         background: #fff;
-        border-radius: 32px;
+        border-radius: 24px;
         transition: all 0.3s ease 0s;
 
         height: 100%;
@@ -103,26 +112,35 @@
     }
 
     &__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 121%;
+
+        color: $colorGrey;
+
         margin-bottom: 16px;
-        color: #6e85ab;
     }
 
     &__stack {
         display: flex;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 143%;
-
-        color: #6e85ab;
+        flex-wrap: wrap;
+        margin: -4px -4px;
 
         margin-bottom: 24px;
     }
 
     &__point {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 143%;
+
+        color: $colorGrey;
+
         padding: 5px 13.5px;
-        border: 1px solid #6e85ab;
+        border: 1px solid $colorGrey;
         border-radius: 87.7854px;
-        margin-left: 4px;
+
+        margin: 2px;
 
         &:nth-child(1) {
             margin-left: 0;
@@ -130,51 +148,41 @@
     }
 
     &__data-list {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 150%;
-
-        color: #6e85ab;
-
+        flex: 1 1 auto;
         margin-bottom: 24px;
     }
 
     &__data-point {
-        margin-bottom: 4px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
 
-        &:last-child {
-            font-size: 14px;
-            line-height: 143%;
-
-            color: #6e85ab;
-            margin-bottom: 0;
-        }
+        color: $colorGrey;
     }
 
-    &__company-info {
-        position: relative;
-
-        display: flex;
-        color: #6e85ab;
-    }
-
-    &__wrap-logo {
-    }
-
-    &__logo {
-        border-radius: 50%;
-    }
-
-    &__about-company {
-        padding-top: 13px;
-        margin-left: 16px;
-    }
-
-    &__span-company {
+    &__data-info {
         font-size: 14px;
         line-height: 143%;
 
-        color: #6e85ab;
+        color: $colorGrey;
+    }
+
+    &__wrap-company {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__name-company {
+    }
+
+    &__span-name {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 20px;
+        line-height: 150%;
+
+        color: $colorGrey;
     }
 }
 

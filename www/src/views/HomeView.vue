@@ -303,17 +303,14 @@ export default {
                 {{c.eventInfo}}
               </li>
             </ul>
-            <ul class="completed__company-info">
-              <li class="completed__wrap-logo">
-                <img class="completed__logo" :src="c.company.logo" :alt="c.company.logoAlt">
-              </li>
-              <li class="completed__about-company">
-                {{c.company.name}} <br>
-                <span class="completed__span-company">
-                  {{c.company.sub}}
-                </span>
-              </li>
-            </ul>
+            <div class="completed__wrap-company">
+              <div class="completed__name-company">
+                <img class="completed__company-logo" :src="c.company.logo" :alt="c.company.logoAlt">
+              </div>
+              <span class="completed__span-name">
+                {{c.company.sub}}
+              </span>
+            </div>
           </div>
         </div>
       </div>
