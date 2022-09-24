@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { inject } from 'vue'
 import axios from 'axios'
+import OfferCard from '@/components/OfferCard.vue'
 import OfferCardDetail from '@/components/OfferCardDetail.vue'
 
 const getData = url => axios.get(url)
@@ -45,14 +46,15 @@ let apiBase
 let dev
 let cardsAll = []
 export default {
-  setup() {
+  setup () {
     apiBase = inject('apiBase')
     dev = inject('dev')
   },
   components: {
+    OfferCard,
     OfferCardDetail
   },
-  data() {
+  data () {
     return {
       offer: null,
       cards: [],
@@ -63,11 +65,11 @@ export default {
       minMonth: minMonth
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.loadData()
     // console.log('before mount')
   },
-  mounted() {
+  mounted () {
     // console.log('mounted')
   },
   methods: {
@@ -166,48 +168,7 @@ export default {
   <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
-        <!-- начало карточки -->
-        <div class="tickets__column" v-for="c in cards" @click="offer = c">
-          <div class="tickets__item">
-            <!-- заголовок карточки -->
-            <h3 class="tickets__title title">
-              {{c.name}}
-            </h3>
-            <!-- перечесление навыков -->
-            <ul class="tickets__stack">
-              <li v-for="s in c.stack" class="tickets__point">
-                {{s}}
-              </li>
-            </ul>
-            <!-- дата проведения события -->
-            <ul class="tickets__data-list">
-              <li class="tickets__data-point">
-                <strong>{{c.eventDt}}</strong>
-              </li>
-              <li class="tickets__data-point" v-if="c.eventDt2">
-                <strong v-html="c.eventDt2"></strong>
-              </li>
-              <li class="tickets__data-info">
-                {{c.eventInfo}}
-              </li>
-            </ul>
-            <!-- лого компаниии и кнопка -->
-            <div class="tickets__wrap-company">
-              <div class="tickets__name-company">
-                <img class="tickets__company-logo" src="./../img/yan.png" alt="">
-                <span class="tickets__span-name">
-                  {{c.company.name}}
-                </span>
-              </div>
-              <div class="tickets__wrap-button">
-                <a class="tickets__button button" :href="c.link" target="_blank">
-                  Участвовать
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- карточка с картинкой скоро новое событие -->
+        <OfferCard v-for="c in cards" v-bind="c" @click="offer = c" />
         <div class="tickets__column">
           <div class="tickets__item-shadow">
             <h3 class="tickets__title-shadow">
@@ -282,37 +243,7 @@ export default {
         </ul>
       </div>
       <div class="completed__row">
-        <div v-for="c in completed" class="completed__column">
-          <div class="completed__item">
-            <h3 class="completed__title title">
-              {{c.name}}
-            </h3>
-            <ul class="completed__stack">
-              <li v-for="s in c.stack" class="completed__point">
-                {{s}}
-              </li>
-            </ul>
-            <ul class="completed__data-list">
-              <li class="completed__data-point">
-                {{c.eventDt}}
-              </li>
-              <li class="completed__data-point" v-if="c.eventDt2">
-                {{c.eventDt2}}
-              </li>
-              <li class="completed__data-point">
-                {{c.eventInfo}}
-              </li>
-            </ul>
-            <div class="completed__wrap-company">
-              <div class="completed__name-company">
-                <img class="completed__company-logo" :src="c.company.logo" :alt="c.company.logoAlt">
-              </div>
-              <span class="completed__span-name">
-                {{c.company.sub}}
-              </span>
-            </div>
-          </div>
-        </div>
+        <OfferCard v-for="c in completed" v-bind="c" class="completed__column" />
       </div>
     </div>
   </section>
