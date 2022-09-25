@@ -6,10 +6,11 @@ export default {
     name: String,
     status: String,
     company: { name: String, sub: String, logo: String, logoAlt: String },
-    stack: [String],
+    stack: Array,
     eventDt: String,
     eventDt2: String,
-    eventInfo: String
+    eventInfo: String,
+    link: String
   },
   methods: {
     backToCards: function() {

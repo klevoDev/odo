@@ -47,7 +47,7 @@ import { RouterLink } from 'vue-router'
           Не так давно к нам обратилась компания с потребностью провести ODO онлайн, при помощи Битрикс24. В таком формате все минусы офлайн-мероприятия сводятся к нулю, а сама платформа позволяет автоматизировать процесс найма, предоставляя возможность экономить время на рутинных задачах и сфокусироваться на качестве подбора.
         </p>
         <div class="note__wrap-pic">
-          <img class="note__pic" src="./../img/note2.png" alt="Here is the actual description of the picture.">
+          <img class="note__pic" src="./../img/note.png" alt="Here is the actual description of the picture.">
         </div>
         <p class="note__text text">
           В наборе людей онлайн также можно выделить ряд преимуществ:

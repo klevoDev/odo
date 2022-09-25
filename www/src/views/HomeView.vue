@@ -45,6 +45,7 @@ const decMonth = isoDt => {
 let apiBase
 let dev
 let cardsAll = []
+let completedAll = []
 export default {
   setup () {
     apiBase = inject('apiBase')
@@ -81,12 +82,19 @@ export default {
       ])
         .then(resp => {
           // toastr.success('Карточки успешно получены')
-          cardsAll = resp[0].data.data
+          cardsAll = resp[0].data.data.slice(0)
           if (dev) {
             cardsAll = cardsAll.map(setLocalImgs)
           }
           self.cards = cardsAll.filter(c => c.status === 'active')
-          self.completed = cardsAll.filter(c => c.status === 'completed' && c.completedDt && c.completedDt.substr(0, 7) === curMonth)
+
+          completedAll = cardsAll.slice(0).concat(cardsAll.slice(0)) // .filter(c => c.status === 'completed')
+          self.completed = completedAll.filter(c => c.completedDt && c.completedDt.substr(0, 7) === curMonth) // .slice(0, 3)
+
+          // TEMP FOR TEST
+          self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
+          // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
+
           const oftenHiredCompanies = self.completed.map(item => item.company)
           // if (dev) {
           //   oftenHiredCompanies = oftenHiredCompanies.map(setLocalImgs)
@@ -117,20 +125,24 @@ export default {
       return months[num - 1]
     },
     updateCompletedCards: function () {
-      console.log(this.curMonth)
-      this.completed = cardsAll.filter(c => c.status === 'completed' && c.completedDt && c.completedDt.substr(0, 7) === this.curMonth)
-      this.stats.completed = this.completed.length
+      // console.log(this.curMonth)
+      const completedByMonth = completedAll
+        .filter(c => c.completedDt && c.completedDt.substr(0, 7) === this.curMonth)
+
+      this.completed = completedByMonth //.slice(0, 3)
+      this.stats.completed = completedByMonth.length
       const unique = {}
-      this.completed.forEach(c => {
+      completedByMonth.forEach(c => {
         unique[c.company.name] = true
       })
       this.stats.fastHireCompanies = Object.keys(unique).length
-      this.stats.oftenHiredCompanies = this.completed.map(item => item.company)
+      this.stats.oftenHiredCompanies = completedByMonth.map(item => item.company)
     },
-    showCompletedByMonth: function (monthIso) {
-      this.curMonth = monthIso
-      this.updateCompletedCards()
-    },
+    // TEMP OFF
+    // showCompletedByMonth: function (monthIso) {
+    //   this.curMonth = monthIso
+    //   this.updateCompletedCards()
+    // },
     prevCompletedMonths: function () {
       this.curMonth = decMonth(this.curMonth)
       this.updateCompletedCards()

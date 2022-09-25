@@ -5,8 +5,9 @@ export default {
   props: {
     name: String,
     company: { name: String, sub: String, logo: String, logoAlt: String },
-    stack: [String],
-    eventDt: String
+    stack: Array,
+    eventDt: String,
+    link: String
   },
   methods: {
     backToCards: function () {
@@ -129,7 +130,7 @@ export default {
           После регистрации вам придет ссылка на Яндекс.Контест, который вы сможете решить в удобное для вас время. После чего с вами свяжется рекрутер, чтобы познакомиться и рассказать подробнее о мероприятии.
         </p>
         <div class="details__wrap-button">
-          <a class="details__button" href="https://yandex.ru/promo/events/fasttrack_crowd?from=home">
+          <a class="details__button" :href="link">
             Участвовать
           </a>
         </div>
