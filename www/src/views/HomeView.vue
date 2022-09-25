@@ -84,24 +84,21 @@ export default {
       ])
         .then(resp => {
           // toastr.success('Карточки успешно получены')
+          console.log('loaded data')
           cardsAll = resp[0].data.data.slice(0)
           if (dev) {
             cardsAll = cardsAll.map(setLocalImgs)
           }
           self.cards = cardsAll.filter(c => c.status === 'active')
-
-          completedAll = cardsAll.slice(0).concat(cardsAll.slice(0)) // .filter(c => c.status === 'completed')
-          self.completed = completedAll.filter(c => c.completedDt && c.completedDt.substr(0, 7) === curMonth).slice(0, 3)
+          completedAll = cardsAll.filter(c => c.status === 'completed') // c => c.completedDt && c.completedDt.substr(0, 7) === curMonth)
 
           // TEMP FOR TEST
           self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
           // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
+          completedAll = completedAll.concat(cardsAll.slice(0))
 
-          this.updateCompletedCards()
-          // const oftenHiredCompanies = self.completed.map(item => item.company)
-          
           self.stats = resp[1].data.data
-          console.log('loaded data')
+          this.updateCompletedCards()
         })
         .catch(err => {
           console.log(err)
