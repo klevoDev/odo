@@ -46,6 +46,7 @@ let apiBase
 let dev
 let cardsAll = []
 let completedAll = []
+let completedByMonth = []
 export default {
   setup () {
     apiBase = inject('apiBase')
@@ -63,7 +64,8 @@ export default {
       stats: {},
       curMonth: curMonth,
       maxMonth: maxMonth,
-      minMonth: minMonth
+      minMonth: minMonth,
+      offsetCnt: 0
     }
   },
   beforeMount () {
@@ -89,17 +91,15 @@ export default {
           self.cards = cardsAll.filter(c => c.status === 'active')
 
           completedAll = cardsAll.slice(0).concat(cardsAll.slice(0)) // .filter(c => c.status === 'completed')
-          self.completed = completedAll.filter(c => c.completedDt && c.completedDt.substr(0, 7) === curMonth) // .slice(0, 3)
+          self.completed = completedAll.filter(c => c.completedDt && c.completedDt.substr(0, 7) === curMonth).slice(0, 3)
 
           // TEMP FOR TEST
           self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
           // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
 
-          const oftenHiredCompanies = self.completed.map(item => item.company)
-          // if (dev) {
-          //   oftenHiredCompanies = oftenHiredCompanies.map(setLocalImgs)
-          // }
-          resp[1].data.data.oftenHiredCompanies = oftenHiredCompanies
+          this.updateCompletedCards()
+          // const oftenHiredCompanies = self.completed.map(item => item.company)
+          
           self.stats = resp[1].data.data
           console.log('loaded data')
         })
@@ -126,17 +126,24 @@ export default {
     },
     updateCompletedCards: function () {
       // console.log(this.curMonth)
-      const completedByMonth = completedAll
+      completedByMonth = completedAll
         .filter(c => c.completedDt && c.completedDt.substr(0, 7) === this.curMonth)
 
-      this.completed = completedByMonth //.slice(0, 3)
+      this.completed = completedByMonth.slice(this.offsetCnt, this.offsetCnt + 3)
       this.stats.completed = completedByMonth.length
       const unique = {}
+      let oftenHiredCompanies = []
       completedByMonth.forEach(c => {
-        unique[c.company.name] = true
+        if (!unique[c.company.name]) {
+          oftenHiredCompanies.push(c.company)
+          unique[c.company.name] = true
+        }
       })
+      /*if (dev) {
+        oftenHiredCompanies = oftenHiredCompanies.map(setLocalImgs)
+      }*/
       this.stats.fastHireCompanies = Object.keys(unique).length
-      this.stats.oftenHiredCompanies = completedByMonth.map(item => item.company)
+      this.stats.oftenHiredCompanies = oftenHiredCompanies
     },
     // TEMP OFF
     // showCompletedByMonth: function (monthIso) {
@@ -145,10 +152,27 @@ export default {
     // },
     prevCompletedMonths: function () {
       this.curMonth = decMonth(this.curMonth)
+      this.offsetCnt = 0
       this.updateCompletedCards()
     },
     nextCompletedMonths: function () {
       this.curMonth = incMonth(this.curMonth)
+      this.offsetCnt = 0
+      this.updateCompletedCards()
+    },
+    makeStep: function (direction, cnt) {
+      let newOffsetCnt
+      if (direction === 'left') {
+        newOffsetCnt = this.offsetCnt - cnt
+      } else if (direction === 'right') {
+        newOffsetCnt = this.offsetCnt + cnt
+      }
+
+      if (newOffsetCnt > 0 && newOffsetCnt < completedByMonth.length - 2) {
+        this.offsetCnt = newOffsetCnt
+      }
+
+      console.log(this.offsetCnt)
       this.updateCompletedCards()
     }
   }
@@ -238,8 +262,10 @@ export default {
   <section class="page__completed completed" v-if="!offer">
     <div class="container">
       <div class="completed__row-data">
-        <h2 class="completed__subheading _icon-data-left _icon-data-right">
-          Уже завершены
+        <h2 class="completed__subheading">
+          Уже завершены&nbsp;
+          <small class="_icon-data-left" v-if="stats.completed > 3" @click="makeStep('left', 1)"></small>&nbsp;
+          <small class="_icon-data-right" v-if="stats.completed > 3" @click="makeStep('right', 1)"></small>
         </h2>
         <ul class="completed__list-data">
           <li class="completed__left-button">
