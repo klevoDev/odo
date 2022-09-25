@@ -188,8 +188,12 @@
 
 @media (max-width: 1023px) {
     .completed {
+        &__row {
+            justify-content: center;
+        }
+
         &__column {
-            flex: 0 1 50%;
+            flex: 0 1 45%;
         }
     }
 }
@@ -201,104 +205,40 @@
         }
 
         &__subheading {
-            margin-bottom: 30px;
-        }
-
-        &__list-data {
-        }
-
-        &__left-button {
-        }
-
-        &__left {
-        }
-
-        &__wrap-month {
-            &:nth-child(2) {
-                display: none;
-            }
-
-            &:nth-child(3) {
-                display: none;
-            }
-        }
-
-        &__month {
-        }
-
-        &__rigth-button {
-        }
-
-        &__rigth {
-        }
-
-        &__year {
-        }
-
-        &__row {
+            margin-bottom: 20px;
         }
 
         &__column {
+            flex: 0 1 80%;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .completed {
+        &__column {
+            flex: 0 1 100%;
         }
 
-        &__item {
+        &__subheading {
+            font-size: 20px;
+
+            &::before {
+                top: 4px;
+            }
+
+            &::after {
+                top: 4px;
+            }
         }
 
-        &__title {
+        &__wrap-company {
+            flex-direction: column;
         }
 
-        &__stack {
-        }
-
-        &__point {
-        }
-
-        &__data-list {
-        }
-
-        &__data-point {
-        }
-
-        &__company-info {
-        }
-
-        &__wrap-logo {
-        }
-
-        &__logo {
-        }
-
-        &__about-company {
-        }
-
-        &__span-company {
-        }
-
-        &__wrap-button {
-        }
-
-        &__button {
-        }
-
-        &__more {
-        }
-
-        &__item-shadow {
-        }
-
-        &__title-shadow {
-        }
-
-        &__wrap-img-load {
-        }
-
-        &__wrap-load {
-        }
-
-        &__wrap-cartoon {
-        }
-
-        &__cartoon {
+        &__name-company {
+            margin-right: auto;
+            margin-bottom: 50px;
         }
     }
 }
