@@ -120,4 +120,7 @@ export default {
   </footer>
 </template>
 <style scoped>
+  .router-link-active {
+    color: #151f2d !important;
+  }
 </style>
