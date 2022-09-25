@@ -41,7 +41,7 @@ export default {
         <li :class="{ 'tickets__data-point': status === 'active', 'completed__data-point': status !== 'active' }" v-if="eventDt2">
           <strong v-html="eventDt2"></strong>
         </li>
-        <li :class="{ 'tickets__data-info': status === 'active', 'completed__data-point': status !== 'active' }">
+        <li :class="{ 'tickets__data-info': status === 'active', 'completed__data-info': status !== 'active' }">
           {{eventInfo}}
         </li>
       </ul>

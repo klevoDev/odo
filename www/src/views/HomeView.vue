@@ -108,6 +108,11 @@ export default {
     },
     getMonthName: function (isoDt) {
       const num = parseInt(isoDt.substr(6, 2), 10)
+      const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+      return months[num - 1]
+    },
+    getStatsMonthName: function (isoDt) {
+      const num = parseInt(isoDt.substr(6, 2), 10)
       const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
       return months[num - 1]
     },
@@ -137,7 +142,6 @@ export default {
   }
 }
 </script>
-
 <template>
   <section class="page__start start">
     <div class="container">
@@ -188,7 +192,7 @@ export default {
   <section class="page__statistics statistics" v-if="!offer">
     <div class="container">
       <h2 class="statistics__subheading">
-        Статистика <span>{{getMonthName(curMonth)}}</span>
+        Статистика <span>{{getStatsMonthName(curMonth)}}</span>
       </h2>
       <div class="statistics__row">
         <div class="statistics__column">
@@ -222,20 +226,20 @@ export default {
   <section class="page__completed completed" v-if="!offer">
     <div class="container">
       <div class="completed__row-data">
-        <h2 class="completed__subheading">
+        <h2 class="completed__subheading _icon-data-left _icon-data-right">
           Уже завершены
         </h2>
         <ul class="completed__list-data">
-          <li class="completed__left-button" v-show="curMonth !== minMonth">
-            <a class="completed__left _icon-data-left" @click="prevCompletedMonths" style="cursor: pointer;"></a>
+          <li class="completed__left-button">
+            <a class="completed__left _icon-data-left" @click="prevCompletedMonths"></a>
           </li>
-          <li v-for="m in stats.completedMonths" class="completed__wrap-month">
-            <a class="completed__month" @click="showCompletedByMonth(m.monthIso)" :class="{ 'completed__month__active': m.monthIso === curMonth }" style="cursor: pointer;">
-              {{m.name}}
+          <li class="completed__wrap-month">
+            <a class="completed__month">
+              {{getMonthName(curMonth)}}
             </a>
           </li>
-          <li class="completed__rigth-button" v-show="curMonth !== maxMonth">
-            <a class="completed__rigth _icon-data-right" @click="nextCompletedMonths" style="cursor: pointer;"></a>
+          <li class="completed__rigth-button">
+            <a class="completed__rigth _icon-data-right" @click="nextCompletedMonths"></a>
           </li>
           <li v-for="y in stats.completedYears" class="completed__year">
             {{y.name}}
@@ -248,9 +252,14 @@ export default {
     </div>
   </section>
 </template>
-
 <style>
 .completed__month__active {
   color: #151f2d !important;
 }
+
+._icon-data-left,
+._icon-data-right {
+  cursor: pointer;
+}
+
 </style>
