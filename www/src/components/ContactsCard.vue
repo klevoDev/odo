@@ -76,7 +76,7 @@ export default {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .contact-pop__body {
@@ -133,7 +133,7 @@ export default {
   font-size: 14px;
   line-height: 143%;
   margin-left: 20px;
-  color: #6e85ab;
+  color: #151f2d;
 }
 
 @media (max-width: 424px) {

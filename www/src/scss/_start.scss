@@ -58,18 +58,18 @@
             background: url("./../img/light.png") 0 0 / contain no-repeat;
         }
 
-        // &::after {
-        //     content: "";
-        //     position: absolute;
+        &::after {
+            content: "";
+            position: absolute;
 
-        //     left: 0;
-        //     bottom: -70px;
+            left: 0;
+            bottom: -70px;
 
-        //     width: 706px;
-        //     height: 178px;
-        //     z-index: -1;
-        //     background: url("./../img/shadow.png") 0 0 / contain no-repeat;
-        // }
+            width: 706px;
+            height: 178px;
+            z-index: -1;
+            background: url("./../img/shadow.png") 0 0 / contain no-repeat;
+        }
     }
 
     &__picture {
