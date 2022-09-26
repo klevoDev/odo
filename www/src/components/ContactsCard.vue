@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <section class="page__contact-pop contact-pop" @click="close">
+  <section class="page__contact-pop contact-pop" @click.self="close">
     <div class="container">
       <div class="contact-pop__column">
         <div class="contact-pop__item">
