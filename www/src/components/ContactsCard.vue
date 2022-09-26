@@ -136,6 +136,10 @@ export default {
   color: #151f2d;
 }
 
+.contact-pop__close-button a {
+  color: #151f2d;
+}
+
 @media (max-width: 424px) {
   .contact-pop__body {
     text-align: center;

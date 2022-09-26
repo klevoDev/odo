@@ -22,10 +22,10 @@ export default {
 </script>
 <template>
   <!-- начало карточки -->
-  <div class="tickets__column">
-    <div class="tickets__item">
+  <div :class="{ 'tickets__column': status === 'active', 'completed__column': status !== 'active' }">
+    <div :class="{ 'tickets__item': status === 'active', 'completed__item': status !== 'active' }">
       <!-- заголовок карточки -->
-      <h3 class="title" :class="{ 'tickets__title': status === 'active', 'completed__title': status !== 'active' }">
+      <h3 :class="{ 'tickets__title': status === 'active', 'completed__title': status !== 'active' }">
         {{name}}
       </h3>
       <!-- перечесление навыков -->

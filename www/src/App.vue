@@ -4,7 +4,7 @@ import { provide } from 'vue'
 import SubscriptionCard from '@/components/SubscriptionCard.vue'
 import ContactsCard from '@/components/ContactsCard.vue'
 
-const dev = false
+const dev = true
 export default {
   setup () {
     provide('apiBase', 'https://onedayoffer.ru/api/test/')
