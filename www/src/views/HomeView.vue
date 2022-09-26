@@ -65,7 +65,8 @@ export default {
       curMonth: curMonth,
       maxMonth: maxMonth,
       minMonth: minMonth,
-      offsetCnt: 0
+      offsetCnt: 0,
+      dev
     }
   },
   beforeMount () {
@@ -92,10 +93,12 @@ export default {
           self.cards = cardsAll.filter(c => c.status === 'active')
           completedAll = cardsAll.filter(c => c.status === 'completed') // c => c.completedDt && c.completedDt.substr(0, 7) === curMonth)
 
-          // TEMP FOR TEST
-          self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
-          // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
-          completedAll = completedAll.concat(cardsAll.slice(0))
+          if (dev) {
+            // TEMP FOR TEST
+            self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
+            // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
+            completedAll = completedAll.concat(cardsAll.slice(0))
+          }
 
           self.stats = resp[1].data.data
           this.updateCompletedCards()
@@ -189,7 +192,7 @@ export default {
           <p class="start__text">
             Все вакансии быстрого найма от лучших компаний страны
           </p>
-          <div class="start__wrap-subscribe">
+          <div class="start__wrap-subscribe" v-if="dev">
             <a class="start__subscribe subscribe" href="#" @click="openSubscription('middle')">
               Подписаться на события
             </a>
@@ -205,7 +208,7 @@ export default {
   <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
-        <OfferCard v-for="c in cards" v-bind="c" @click="offer = c" />
+        <OfferCard v-for="c in cards" v-bind="c" /> <!-- @click="offer = c" -->
         <div class="tickets__column">
           <div class="tickets__item-shadow">
             <h3 class="tickets__title-shadow">

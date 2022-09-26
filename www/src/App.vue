@@ -4,10 +4,11 @@ import { provide } from 'vue'
 import SubscriptionCard from '@/components/SubscriptionCard.vue'
 import ContactsCard from '@/components/ContactsCard.vue'
 
+const dev = false
 export default {
   setup () {
     provide('apiBase', 'https://onedayoffer.ru/api/test/')
-    provide('dev', true)
+    provide('dev', dev)
   },
   components: {
     SubscriptionCard,
@@ -17,7 +18,8 @@ export default {
     return {
       subscriptionOpened: false,
       contactsOpened: false,
-      positionLast: 'unknown'
+      positionLast: 'unknown',
+      dev
     }
   },
   methods: {
@@ -48,7 +50,7 @@ export default {
                 События
               </RouterLink>
             </li>
-            <li class="header__item">
+            <li class="header__item" v-if="dev">
               <RouterLink class="header__link" to="/blog">
                 Блог
               </RouterLink>
@@ -61,7 +63,7 @@ export default {
               Телеграм канал
             </a>
           </li>
-          <li class="header__item">
+          <li class="header__item" v-if="dev">
             <a class="header__subscribe subscribe" href="#" @click="openSubscription('top')">
               Подписаться на события
             </a>
@@ -91,7 +93,7 @@ export default {
               События
             </RouterLink>
           </li>
-          <li class="footer__item">
+          <li class="footer__item" v-if="dev">
             <RouterLink class="footer__ref" to="/blog">
               Блог
             </RouterLink>
@@ -109,7 +111,7 @@ export default {
               Телеграм канал
             </a>
           </div>
-          <div class="footer__wrap-subscribe">
+          <div class="footer__wrap-subscribe" v-if="dev">
             <a class="footer__subscribe subscribe" href="#" @click="openSubscription('bottom')">
               Подписаться на события
             </a>
