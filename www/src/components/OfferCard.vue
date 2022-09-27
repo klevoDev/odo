@@ -29,8 +29,8 @@ export default {
         {{name}}
       </h3>
       <!-- перечесление навыков -->
-      <ul :class="{ 'tickets__stack': status === 'active', 'completed__stack': status !== 'active'}">
-        <li v-for="s in stack" class="tickets__point">
+      <ul :class="{ 'tickets__stack': status === 'active', 'completed__stack': status !== 'active' }">
+        <li v-for="s in stack" :class="{ 'tickets__point': status === 'active', 'completed__point': status !== 'active' }">
           {{s}}
         </li>
       </ul>
@@ -50,7 +50,7 @@ export default {
       <div :class="{ 'tickets__wrap-company': status === 'active', 'completed__wrap-company': status !== 'active' }">
         <div :class="{ 'tickets__name-company': status === 'active', 'completed__name-company': status !== 'active' }">
           <img :class="{ 'tickets__company-logo': status === 'active', 'completed__company-logo': status !== 'active' }" :src="company.logo" :alt="company.logoAlt">
-          <span class="tickets__span-name">
+          <span :class="{ 'tickets__span-name': status === 'active', 'completed__span-name': status !== 'active' }">
             {{company.name}}
           </span>
         </div>
