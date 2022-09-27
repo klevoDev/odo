@@ -11,6 +11,19 @@ body {
     background: #e1e8f4;
 }
 
+.bm-burger-button {
+    left: inherit;
+    right: 36px !important;
+}
+
+.bm-menu {
+    background-color: rgba(118, 132, 156, 0.7) !important;
+}
+
+.bm-overlay {
+    background: #e1e8f4;
+}
+
 // * ===== bem blocks ===== * //
 @import "_blocks";
 

@@ -1,6 +1,7 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import { provide } from 'vue'
+import { Slide } from 'vue3-burger-menu'
 import SubscriptionCard from '@/components/SubscriptionCard.vue'
 import ContactsCard from '@/components/ContactsCard.vue'
 
@@ -11,6 +12,7 @@ export default {
     provide('dev', dev)
   },
   components: {
+    Slide,
     SubscriptionCard,
     ContactsCard
   },
@@ -35,6 +37,14 @@ export default {
 </script>
 
 <template>
+  <Slide right>
+    <RouterLink id="home" to="/">
+      <span>Главная</span>
+    </RouterLink>
+    <RouterLink id="blog" to="/blog">
+      <span>События</span>
+    </RouterLink>
+  </Slide>
   <header class="header">
     <div class="container">
       <div class="header__row">
