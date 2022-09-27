@@ -13,7 +13,7 @@ export default {
     link: String
   },
   methods: {
-    backToCards: function() {
+    backToCards: function () {
       this.$parent.closeOffer()
     }
   }
@@ -25,7 +25,7 @@ export default {
   <div :class="{ 'tickets__column': status === 'active', 'completed__column': status !== 'active' }">
     <div :class="{ 'tickets__item': status === 'active', 'completed__item': status !== 'active' }">
       <!-- заголовок карточки -->
-      <h3 :class="{ 'tickets__title': status === 'active', 'completed__title': status !== 'active' }">
+      <h3 :class="{ 'tickets__title title': status === 'active', 'completed__title': status !== 'active' }">
         {{name}}
       </h3>
       <!-- перечесление навыков -->
@@ -63,11 +63,10 @@ export default {
     </div>
   </div>
   <!-- карточка с картинкой скоро новое событие -->
-  
+
 </template>
 <style>
 .tickets__button {
   cursor: pointer;
 }
-
 </style>
