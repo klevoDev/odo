@@ -18,7 +18,7 @@ const setLocalImgs = c => {
 
 const now = new Date()
 const maxMonth = now.toISOString().substr(0, 7)
-const minMonth = '2022-07'
+const minMonth = '2022-08'
 now.setMonth(now.getMonth() - 1)
 const curMonth = now.toISOString().substr(0, 7)
 
