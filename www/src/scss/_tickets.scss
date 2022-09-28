@@ -129,10 +129,30 @@
 
     &__wrap-cartoon {
         text-align: right;
-        margin-top: -30px;
+        margin-top: 30px;
     }
 
     &__cartoon {
+    }
+}
+
+@media (max-width: 1152px) {
+    .tickets {
+        &__wrap-img-load {
+            margin-bottom: 50px;
+        }
+
+        &__cartoon {
+            max-width: 250px;
+        }
+    }
+}
+
+@media (max-width: 1091px) {
+    .tickets {
+        &__item-shadow {
+            display: none;
+        }
     }
 }
 
@@ -144,10 +164,6 @@
 
         &__column {
             flex: 0 1 45%;
-        }
-
-        &__item-shadow {
-            display: none;
         }
     }
 }
