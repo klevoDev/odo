@@ -49,7 +49,8 @@ export default {
       <!-- лого компаниии и кнопка -->
       <div :class="{ 'tickets__wrap-company': status === 'active', 'completed__wrap-company': status !== 'active' }">
         <div :class="{ 'tickets__name-company': status === 'active', 'completed__name-company': status !== 'active' }">
-          <img :class="{ 'tickets__company-logo': status === 'active', 'completed__company-logo': status !== 'active' }" :src="company.logo" :alt="company.logoAlt">
+          <img :class="{ 'tickets__company-logo': status === 'active', 'completed__company-logo': status !== 'active' }"
+          :src="status === 'active' ? company.logo : company.logoEnd" :alt="company.logoAlt">
           <span :class="{ 'tickets__span-name': status === 'active', 'completed__span-name': status !== 'active' }">
             {{company.name}}
           </span>

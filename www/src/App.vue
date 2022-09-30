@@ -37,20 +37,20 @@ export default {
 </script>
 
 <template>
-  <Slide right>
+  <!-- <Slide right>
     <RouterLink id="home" to="/">
       <span>Главная</span>
     </RouterLink>
     <RouterLink id="blog" to="/blog">
       <span>События</span>
     </RouterLink>
-  </Slide>
+  </Slide> -->
   <header class="header">
     <div class="container">
       <div class="header__row">
         <div class="header__wrap-logo">
           <RouterLink class="header__logo" to="/">
-            <img src="./img/logo-odo.png" alt="Logo one day offer.">
+            <img src="./img/logo-odo.svg" alt="Logo one day offer.">
           </RouterLink>
         </div>
         <nav class="header__nav">
@@ -95,7 +95,7 @@ export default {
         <ul class="footer__list">
           <li class="footer__item">
             <RouterLink class="footer__logo" to="/">
-              <img src="./img/logo-odo.png" alt="Logo one day offer.">
+              <img src="./img/logo-odo.svg" alt="Logo one day offer.">
             </RouterLink>
           </li>
           <li class="footer__item">

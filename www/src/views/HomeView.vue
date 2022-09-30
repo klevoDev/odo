@@ -9,9 +9,11 @@ const getData = url => axios.get(url)
 const setLocalImgs = c => {
   if (c.company) {
     c.company.logo = c.company.logo.replace('img/', 'src/img/')
+    c.company.logoEnd = c.company.logoEnd.replace('img/', 'src/img/')
   }
   if (c.logo) {
     c.logo = c.logo.replace('img/', 'src/img/')
+    c.logoEnd = c.logoEnd.replace('img/', 'src/img/')
   }
   return c
 }

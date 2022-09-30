@@ -1,7 +1,7 @@
 ﻿<?php
   include_once 'db-utils.php';
 
-  $cols = ['name', 'sub', 'logo', 'logoAlt'];
+  $cols = ['name', 'sub', 'logo', 'logoEnd', 'logoAlt'];
   $items = getDataByLeftJoin('odo_cards', 'odo_companies', 'companyId', 'id', $cols);
   foreach ($items as &$item) {
     $item['stack'] = explode(';', $item['stack']);
