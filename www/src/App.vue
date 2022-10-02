@@ -8,7 +8,7 @@ import ContactsCard from '@/components/ContactsCard.vue'
 const dev = true
 export default {
   setup () {
-    provide('apiBase', 'https://onedayoffer.ru/api/test/')
+    provide('apiBase', dev ? 'https://onedayoffer.ru/api/test/' : 'https://onedayoffer.ru/api/')
     provide('dev', dev)
   },
   components: {
