@@ -200,10 +200,10 @@ export default {
           <h2 class="start__label subheading">
             найди свой
           </h2>
-          <h1 class="start__heading">
+          <h1 class="start__heading" itemprop="name">
             One Day Offer
           </h1>
-          <p class="start__text">
+          <p class="start__text" itemprop="description">
             Все вакансии быстрого найма от лучших компаний страны
           </p>
           <div class="start__wrap-subscribe" v-if="dev">

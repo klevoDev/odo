@@ -36,13 +36,13 @@ export default {
       </ul>
       <!-- дата проведения события -->
       <ul :class="{ 'tickets__data-list': status === 'active', 'completed__data-list': status !== 'active' }">
-        <li :class="{ 'tickets__data-point': status === 'active', 'completed__data-point': status !== 'active' }">
+        <li :class="{ 'tickets__data-point': status === 'active', 'completed__data-point': status !== 'active' }" itemprop="description">
           <strong>{{eventDt}}</strong>
         </li>
-        <li :class="{ 'tickets__data-point': status === 'active', 'completed__data-point': status !== 'active' }" v-if="eventDt2">
+        <li :class="{ 'tickets__data-point': status === 'active', 'completed__data-point': status !== 'active' }" v-if="eventDt2" itemprop="description">
           <strong v-html="eventDt2"></strong>
         </li>
-        <li :class="{ 'tickets__data-info': status === 'active', 'completed__data-info': status !== 'active' }">
+        <li :class="{ 'tickets__data-info': status === 'active', 'completed__data-info': status !== 'active' }" itemprop="description">
           {{eventInfo}}
         </li>
       </ul>
@@ -50,7 +50,7 @@ export default {
       <div :class="{ 'tickets__wrap-company': status === 'active', 'completed__wrap-company': status !== 'active' }">
         <div :class="{ 'tickets__name-company': status === 'active', 'completed__name-company': status !== 'active' }" itemprop="offeredBy" itemscope itemtype="https://schema.org/Organization" itemurl="https://ya.ru">
           <img :class="{ 'tickets__company-logo': status === 'active', 'completed__company-logo': status !== 'active' }"
-          :src="status === 'active' ? company.logo : company.logoEnd" :alt="company.logoAlt">
+          :src="status === 'active' ? company.logo : company.logoEnd" :alt="company.logoAlt" itemprop="image">
           <span :class="{ 'tickets__span-name': status === 'active', 'completed__span-name': status !== 'active' }" itemprop="name">
             {{company.name}}
           </span>
