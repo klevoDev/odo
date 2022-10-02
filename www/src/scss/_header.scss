@@ -65,8 +65,15 @@
             justify-content: space-between;
         }
 
+        &__wrap-logo {
+            margin: 0 auto;
+        }
+
         &__nav {
             display: none;
+        }
+
+        &__telegram {
         }
 
         &__subscribe-list {

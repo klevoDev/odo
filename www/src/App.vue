@@ -79,9 +79,9 @@ export default {
             </a>
           </li>
         </ul>
-        <div class="header__burger">
+        <!-- <div class="header__burger">
           <span class="header__span-burger"></span>
-        </div>
+        </div> -->
       </div>
     </div>
     <SubscriptionCard v-if="subscriptionOpened" />
