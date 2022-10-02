@@ -222,7 +222,7 @@ export default {
   <div class="page__tickets tickets" v-if="!offer">
     <div class="container">
       <div class="tickets__row">
-        <OfferCard v-for="c in cards" v-bind="c" /> <!-- @click="offer = c" -->
+        <OfferCard v-for="c in cards" v-bind="c" itemscope itemtype="https://schema.org/Offer" /> <!-- @click="offer = c" -->
         <div class="tickets__column">
           <div class="tickets__item-shadow">
             <h3 class="tickets__title-shadow">
@@ -299,7 +299,7 @@ export default {
         </ul>
       </div>
       <div class="completed__row">
-        <OfferCard v-for="c in completed" v-bind="c" class="completed__column" />
+        <OfferCard v-for="c in completed" v-bind="c" class="completed__column" itemscope itemtype="https://schema.org/Offer" />
       </div>
     </div>
   </section>
