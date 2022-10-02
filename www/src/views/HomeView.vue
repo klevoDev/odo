@@ -141,18 +141,23 @@ export default {
       this.completed = completedByMonth.slice(this.offsetCnt, this.offsetCnt + 3)
       this.stats.completed = completedByMonth.length
       const unique = {}
-      let oftenHiredCompanies = []
       completedByMonth.forEach(c => {
         if (!unique[c.company.name]) {
-          oftenHiredCompanies.push(c.company)
-          unique[c.company.name] = true
+          unique[c.company.name] = c.company
+          unique[c.company.name].cnt = 0
+        } else {
+          unique[c.company.name].cnt++
         }
       })
+
+      const oftenHiredCompanies = Object.keys(unique).map(key => unique[key])
+      oftenHiredCompanies.sort((a, b) => a.cnt > b.cnt ? -1 : 1)
+
       /*if (dev) {
         oftenHiredCompanies = oftenHiredCompanies.map(setLocalImgs)
       }*/
-      this.stats.fastHireCompanies = Object.keys(unique).length
-      this.stats.oftenHiredCompanies = oftenHiredCompanies
+      this.stats.fastHireCompanies = oftenHiredCompanies.length
+      this.stats.oftenHiredCompanies = oftenHiredCompanies.slice(0, 3)
     },
     // TEMP OFF
     // showCompletedByMonth: function (monthIso) {
