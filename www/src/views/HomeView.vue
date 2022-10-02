@@ -95,12 +95,12 @@ export default {
           self.cards = cardsAll.filter(c => c.status === 'active')
           completedAll = cardsAll.filter(c => c.status === 'completed') // c => c.completedDt && c.completedDt.substr(0, 7) === curMonth)
 
-          if (dev) {
-            // TEMP FOR TEST
-            self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
-            // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
-            completedAll = completedAll.concat(cardsAll.slice(0))
-          }
+          // if (dev) {
+          //   // TEMP FOR TEST
+          //   self.cards = self.cards.slice(0).concat(self.cards.slice(0)).concat(self.cards.slice(0)).concat(self.cards.slice(0))
+          //   // self.completed = cardsAll.slice(0).map(c => { c.status = 'completed'; return c })
+          //   completedAll = completedAll.concat(cardsAll.slice(0))
+          // }
 
           self.stats = resp[1].data.data
           this.updateCompletedCards()
@@ -170,7 +170,7 @@ export default {
         newOffsetCnt = this.offsetCnt + cnt
       }
 
-      if (newOffsetCnt > 0 && newOffsetCnt < completedByMonth.length - 2) {
+      if (newOffsetCnt > -1 && newOffsetCnt < completedByMonth.length - 2) {
         this.offsetCnt = newOffsetCnt
       }
 
