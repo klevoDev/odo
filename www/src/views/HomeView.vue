@@ -124,12 +124,12 @@ export default {
       this.$parent.$parent.openSubscription(position, state)
     },
     getMonthName: function (isoDt) {
-      const num = parseInt(isoDt.substr(6, 2), 10)
+      const num = parseInt(isoDt.substr(5, 2), 10)
       const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
       return months[num - 1]
     },
     getStatsMonthName: function (isoDt) {
-      const num = parseInt(isoDt.substr(6, 2), 10)
+      const num = parseInt(isoDt.substr(5, 2), 10)
       const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
       return months[num - 1]
     },
